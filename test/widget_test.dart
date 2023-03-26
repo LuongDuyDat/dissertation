@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:learning_intern_support_symtem/app.dart';
+import 'package:learning_intern_support_system/app.dart';
 
 
 void main() {

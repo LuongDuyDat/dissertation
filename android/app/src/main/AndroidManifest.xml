@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.learning_intern_support_symtem">
+    package="com.example.learning_intern_support_system">
    <application
-        android:label="learning_intern_support_symtem"
+        android:label="learning_intern_support_system"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

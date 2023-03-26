@@ -1,4 +1,4 @@
-# learning_intern_support_symtem
+# learning_intern_support_system
 
 A new Flutter project.
 
