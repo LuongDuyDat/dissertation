@@ -4,6 +4,7 @@ Color primaryLightColor = const Color(0xFF1E4B99);
 Color backgroundLightColor = const Color(0xFFC0CAD4);
 Color secondaryLightColor = const Color(0xFF189DC3);
 Color backgroundLightColor2 = Colors.white;
+Color textLightColor = Colors.black;
 Color hintText = primaryLightColor.withOpacity(0.5);
 
 final appThemeLight = ThemeData(
@@ -13,37 +14,45 @@ final appThemeLight = ThemeData(
   fontFamily: 'Montserrat',
 
   textTheme: TextTheme(
-    displayLarge: const TextStyle(
+    displayLarge: TextStyle(
       fontSize: 26,
       fontWeight: FontWeight.w900,
+      color: textLightColor,
     ),
-    displayMedium: const TextStyle(
+    displayMedium: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.w900,
+      color: textLightColor,
     ),
-    displaySmall: const TextStyle(
+    displaySmall: TextStyle(
       fontSize: 22,
       fontWeight: FontWeight.w800,
+      color: textLightColor,
     ),
-    headlineMedium: const TextStyle(
+    headlineMedium: TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w800,
+      color: textLightColor,
     ),
-    headlineSmall: const TextStyle(
+    headlineSmall: TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w700,
+      color: textLightColor,
     ),
-    bodyLarge: const TextStyle(
+    bodyLarge: TextStyle(
       fontSize: 16,
-      fontWeight: FontWeight.w800,
+      fontWeight: FontWeight.w500,
+      color: textLightColor,
     ),
-    bodyMedium: const TextStyle(
+    bodyMedium: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w500,
+      color: textLightColor,
     ),
-    bodySmall: const TextStyle(
+    bodySmall: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.normal,
+      color: textLightColor,
     ),
     titleLarge: TextStyle(
       fontSize: 16,
@@ -51,14 +60,14 @@ final appThemeLight = ThemeData(
       color: hintText
     ),
     titleMedium: TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w500,
-        color: hintText
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: hintText,
     ),
     titleSmall: TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w500,
-        color: hintText
+      fontSize: 12,
+      fontWeight: FontWeight.w500,
+      color: hintText,
     ),
   ),
 
@@ -79,7 +88,7 @@ final appThemeLight = ThemeData(
       shadowColor: Colors.transparent,
       textStyle: const TextStyle(
         fontSize: 18,
-        fontWeight: FontWeight.w900,
+        fontWeight: FontWeight.w700,
         color: Colors.white,
       ),
       shape: const RoundedRectangleBorder(

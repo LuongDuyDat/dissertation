@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: appThemeLight,
-      home: LoginPage(),
+      theme: appThemeLight.copyWith(colorScheme: appThemeLight.colorScheme.copyWith(primary: primaryLightColor)),
+      home: const LoginPage(),
     );
   }
 }
