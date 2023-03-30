@@ -6,8 +6,9 @@ class Button extends StatelessWidget {
   final double width;
   final double height;
   final String text;
+  final Function()? onPressed;
 
-  const Button({super.key, required this.type, required this.width, required this.height, required this.text});
+  const Button({super.key, required this.type, required this.width, required this.height, required this.text, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +16,10 @@ class Button extends StatelessWidget {
       width: width,
       height: height,
       child: type == 0 ? ElevatedButton(
-        onPressed: () {  },
+        onPressed: onPressed,
         child: Text(text),
       ) : OutlinedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(text),
       ),
     );

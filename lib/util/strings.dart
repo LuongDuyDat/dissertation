@@ -1,8 +1,21 @@
 import 'global.dart';
 
-String loginString = lang == 'vi' ? 'Đăng nhập' : 'Login';
+String loginString = lang == 'vi' ? 'Đăng nhập' : 'Sign In';
+String signUpString = lang == 'vi' ? 'Đăng ký' : 'Sign Up';
 String emailString = 'Email';
 String passwordString = lang == 'vi' ? 'Mật khẩu' : 'Password';
 String forgetPasswordString = lang == 'vi' ? 'Quên mật khẩu?' : 'Forgot Password?';
-String notHaveAccount = lang == 'vi' ? 'Chưa có tài khoản?' : 'Don\'t have account';
-String registerNow = lang == 'vi' ? 'Đăng ký ngay' : 'Register now';
+String notHaveAccountString = lang == 'vi' ? 'Chưa có tài khoản?' : 'Don\'t have account';
+String registerNowString = lang == 'vi' ? 'Đăng ký ngay' : 'Register now';
+String createAccountString = lang =='vi' ? 'Tạo tài khoản' : 'Create Account';
+String infoAccountString = lang =='vi' ? 'Thông tin tài khoản' : 'Account Information';
+String infoPersonalString = lang =='vi' ? 'Thông tin cá nhân' : 'Personal Information';
+String confirmPasswordString = lang == 'vi' ? 'Xác nhận mật khẩu' : 'Confirm Password';
+String nextString = lang == 'vi' ? 'Tiếp' : 'Next';
+String alreadyHaveAccount = lang == 'vi' ? 'Đã có tài khoản?' : 'Already have account?';
+String fullNameString = lang == 'vi' ? 'Họ và Tên' : 'Fullname';
+String studentIdString = lang == 'vi' ? 'Mã sinh viên' : 'Student ID';
+String classString = lang == 'vi' ? 'Lớp' : 'Class';
+String facultyString = lang == 'vi' ? 'Khoa' : 'Faculty';
+List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
+List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];

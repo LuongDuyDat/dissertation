@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 Color primaryLightColor = const Color(0xFF1E4B99);
 Color backgroundLightColor = const Color(0xFFC0CAD4);
 Color secondaryLightColor = const Color(0xFF189DC3);
+Color highLightColor = primaryLightColor.withOpacity(0.7);
 Color backgroundLightColor2 = Colors.white;
 Color textLightColor = Colors.black;
-Color hintText = primaryLightColor.withOpacity(0.5);
+Color hintLightText = primaryLightColor.withOpacity(0.7);
+Color hintLightText2 = const Color(0xFF676767);
 
 final appThemeLight = ThemeData(
   primaryColor: primaryLightColor,
   scaffoldBackgroundColor: backgroundLightColor,
-  highlightColor: secondaryLightColor,
+  highlightColor: highLightColor,
   fontFamily: 'Montserrat',
 
   textTheme: TextTheme(
@@ -57,17 +59,17 @@ final appThemeLight = ThemeData(
     titleLarge: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w500,
-      color: hintText
+      color: hintLightText,
     ),
     titleMedium: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w500,
-      color: hintText,
+      color: hintLightText,
     ),
     titleSmall: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w500,
-      color: hintText,
+      color: hintLightText,
     ),
   ),
 
@@ -75,6 +77,10 @@ final appThemeLight = ThemeData(
     backgroundColor: backgroundLightColor2,
     centerTitle: false,
     titleSpacing: 10,
+    iconTheme: const IconThemeData(
+      size: 25,
+      color: Colors.black,
+    ),
     titleTextStyle: TextStyle(
       fontSize: 26,
       fontWeight: FontWeight.w900,
@@ -108,6 +114,12 @@ final appThemeLight = ThemeData(
         fontWeight: FontWeight.w700,
         color: backgroundLightColor2,
       ),
+    ),
+  ),
+
+  iconButtonTheme: IconButtonThemeData(
+    style: ButtonStyle(
+      iconColor: MaterialStateProperty.all(textLightColor),
     ),
   ),
 );

@@ -1,7 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/component/button.dart';
 import 'package:learning_intern_support_system/component/input_field.dart';
+import 'package:learning_intern_support_system/screen/register.dart';
 import 'package:learning_intern_support_system/util/global.dart';
+import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 import 'package:learning_intern_support_system/util/theme.dart';
 
@@ -23,7 +26,7 @@ class LoginPage extends StatelessWidget {
             Text(loginString, style: Theme.of(context).textTheme.displayLarge,),
             SizedBox(height: 0.06 * screenHeight),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 0.064 * screenWidth),
+              padding: EdgeInsets.symmetric(horizontal: 0.056 * screenWidth),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -67,17 +70,20 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 0.01 * screenHeight),
             RichText(
               text: TextSpan(
-                text: '$notHaveAccount ',
+                text: '$notHaveAccountString ',
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                   fontWeight: FontWeight.normal,
                 ),
                 children: [
                   TextSpan(
-                    text: registerNow,
+                    text: registerNowString,
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       color: primaryLightColor,
                       decoration: TextDecoration.underline,
                     ),
+                    recognizer: TapGestureRecognizer()..onTap = () {
+                      Navigate.pushPage(context, const RegisterPage(number: 0));
+                    }
                   ),
                 ]
               ),
