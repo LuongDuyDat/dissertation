@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/component/button.dart';
 import 'package:learning_intern_support_system/component/input_field.dart';
+import 'package:learning_intern_support_system/screen/forgot_pass.dart';
 import 'package:learning_intern_support_system/screen/register.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
@@ -47,13 +48,18 @@ class LoginPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
-                        forgetPasswordString,
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontWeight: FontWeight.normal,
-                          color: primaryLightColor,
-                          decoration: TextDecoration.underline,
+                      InkWell(
+                        child: Text(
+                          forgetPasswordString,
+                          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.normal,
+                            color: primaryLightColor,
+                            decoration: TextDecoration.underline,
+                          ),
                         ),
+                        onTap: () {
+                          Navigate.pushPage(context, const ForgotPassPage());
+                        },
                       )
                     ],
                   ),
