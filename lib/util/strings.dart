@@ -22,5 +22,10 @@ String enterEmailString = lang == 'vi' ? 'Nhập email của bạn' : 'Enter you
 String orString = lang == 'vi' ? 'hoặc' : 'or';
 String backToSignInString = lang == 'vi' ? 'Quay về đăng nhập' : 'Back to Sign In';
 String sendToEmailString = lang == 'vi' ? 'Gửi tới Email' : 'Send to Email';
+String homeString = lang == 'vi' ? 'Trang chủ' : 'Home';
+String scheduleString = lang == 'vi' ? 'Lập lịch' : 'Schedule';
+String notificationString = lang == 'vi' ? 'Thông báo' : 'Notifications';
+String meString = lang == 'vi' ? 'Tôi' : 'Me';
+
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/component/button.dart';
 import 'package:learning_intern_support_system/component/input_field.dart';
 import 'package:learning_intern_support_system/screen/forgot_pass.dart';
+import 'package:learning_intern_support_system/screen/persistent_bottom_nav_bar.dart';
 import 'package:learning_intern_support_system/screen/register.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
@@ -72,6 +73,9 @@ class LoginPage extends StatelessWidget {
               width: 0.58 * screenWidth,
               height: 0.056 * screenHeight,
               text: loginString,
+              onPressed: () {
+                Navigate.pushPage(context, const PersistentNavbar());
+              },
             ),
             SizedBox(height: 0.01 * screenHeight),
             RichText(
