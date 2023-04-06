@@ -26,6 +26,17 @@ String homeString = lang == 'vi' ? 'Trang chủ' : 'Home';
 String scheduleString = lang == 'vi' ? 'Lập lịch' : 'Schedule';
 String notificationString = lang == 'vi' ? 'Thông báo' : 'Notifications';
 String meString = lang == 'vi' ? 'Tôi' : 'Me';
+String trainingProgramString = lang == 'vi' ? 'Chương trình đào tạo' : 'Training Programmes';
+String recentModuleString = lang == 'vi' ? 'Học phần gần đây' : 'Recent Modules';
+String studyProcessString = lang == 'vi' ? 'Tiến trình học tập' : 'Study Process';
+String internString = lang == 'vi' ? 'Thực tập' : 'Intern';
+String postString = lang == 'vi' ? 'Bài đăng' : 'Post';
+String allString = lang == 'vi' ? 'Tất cả' : 'All';
+String schoolFacultyString = lang == 'vi' ? 'Trường/ Khoa' : 'School/Faculty';
+String companyString = lang == 'vi' ? 'Công ty' : 'Company';
+String statisticString = lang == 'vi' ? 'Thống kê' : 'Statistic';
+String listPartnerString = lang == 'vi' ? 'DS Đối tác' : 'Partner List';
+String reportString = lang == 'vi' ? 'Báo cáo' : 'Report';
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];

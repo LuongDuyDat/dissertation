@@ -71,6 +71,11 @@ final appThemeLight = ThemeData(
       fontWeight: FontWeight.w500,
       color: hintLightText,
     ),
+    labelLarge: const TextStyle(
+      fontFamily: 'Ananda',
+      fontSize: 20,
+      fontWeight: FontWeight.normal,
+    ),
   ),
 
   appBarTheme: AppBarTheme(
