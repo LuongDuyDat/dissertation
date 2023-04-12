@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../util/global.dart';
 
 class TopicWithImage extends StatelessWidget {
-  const TopicWithImage({super.key, required this.logo, required this.name});
+  const TopicWithImage({super.key, required this.logo, this.name});
 
   final String logo;
-  final String name;
+  final String? name;
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +25,18 @@ class TopicWithImage extends StatelessWidget {
             child: Image.asset(logo, fit: BoxFit.contain,),
           ),
         ),
-        SizedBox(height: 0.004 * screenHeight,),
+        SizedBox(height: name != null ? 0.004 * screenHeight : 0,),
+        name != null ?
         SizedBox(
           width: 0.13 * screenHeight,
           child: Text(
-            name,
+            name!,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodySmall,
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
           ),
-        ),
+        ) : const SizedBox(width: 0, height: 0,),
       ],
     );
   }

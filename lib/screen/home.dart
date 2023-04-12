@@ -4,7 +4,9 @@ import 'package:learning_intern_support_system/component/circle_functionality.da
 import 'package:learning_intern_support_system/component/logo_with_image.dart';
 import 'package:learning_intern_support_system/component/logo_with_name.dart';
 import 'package:learning_intern_support_system/component/post.dart';
+import 'package:learning_intern_support_system/screen/search/search.dart';
 import 'package:learning_intern_support_system/util/global.dart';
+import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 import 'package:learning_intern_support_system/util/theme.dart';
 
@@ -30,7 +32,12 @@ class HomePage extends StatelessWidget {
                 Positioned(
                   top: 0.055 * screenHeight,
                   left: 0.87 * screenWidth,
-                  child: Icon(Icons.search, color: backgroundLightColor2, size: 35,),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigate.pushNewScreen(context, const SearchPage(), true);
+                    },
+                    icon: Icon(Icons.search, color: backgroundLightColor2, size: 35,),
+                  ),
                 ),
               ],
             ),

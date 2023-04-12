@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 
 class TopicWithName extends StatelessWidget {
-  const TopicWithName({Key? key, required this.name, required this.id}) : super(key: key);
+  const TopicWithName({Key? key, this.name, required this.id}) : super(key: key);
   final String id;
-  final String name;
+  final String? name;
 
   @override
   Widget build(BuildContext context) {
@@ -45,15 +45,16 @@ class TopicWithName extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 0.004 * screenHeight,),
+        SizedBox(height: name != null ? 0.004 * screenHeight : 0,),
+        name != null ?
         SizedBox(
           width: 0.13 * screenHeight,
           child: Text(
-            name,
+            name!,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
-        ),
+        ) : const SizedBox(height: 0, width: 0,),
       ],
     );
   }

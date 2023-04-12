@@ -127,4 +127,25 @@ final appThemeLight = ThemeData(
       iconColor: MaterialStateProperty.all(textLightColor),
     ),
   ),
+
+  tabBarTheme: TabBarTheme(
+    labelColor: primaryLightColor,
+    labelStyle: const TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w700,
+    ),
+    unselectedLabelColor: textLightColor,
+    unselectedLabelStyle: const TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+    ),
+    indicatorColor: primaryLightColor,
+    labelPadding: EdgeInsets.zero
+  ),
+
+  listTileTheme: ListTileThemeData(
+    iconColor: primaryLightColor,
+    textColor: textLightColor,
+    selectedColor: secondaryLightColor,
+  ),
 );

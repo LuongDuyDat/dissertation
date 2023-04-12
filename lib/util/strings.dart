@@ -37,6 +37,13 @@ String companyString = lang == 'vi' ? 'Công ty' : 'Company';
 String statisticString = lang == 'vi' ? 'Thống kê' : 'Statistic';
 String listPartnerString = lang == 'vi' ? 'DS Đối tác' : 'Partner List';
 String reportString = lang == 'vi' ? 'Báo cáo' : 'Report';
+String searchString = lang == 'vi' ? 'Tìm kiếm' : 'Search';
+String cancelString = lang == 'vi' ? 'Huỷ bỏ' : 'Cancel';
+String recentString = lang == 'vi' ? 'Gần đây' : 'Recent';
+String shortTrainingProgramString = lang == 'vi' ? 'CTDT' : 'Program';
+String moduleString = lang == 'vi' ? 'Học phần' : 'Module';
+String lecturerString = lang == 'vi' ? 'Giảng viên' : 'Lecturer';
+String partnerString = lang == 'vi' ? 'Đối tác' : 'Partner';
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];
