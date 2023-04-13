@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/screen/home.dart';
 import 'package:learning_intern_support_system/screen/notification.dart';
-import 'package:learning_intern_support_system/screen/profile.dart';
+import 'package:learning_intern_support_system/screen/profile/my_profile.dart';
 import 'package:learning_intern_support_system/screen/schedule.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 import 'package:learning_intern_support_system/util/theme.dart';

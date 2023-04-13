@@ -7,12 +7,20 @@ class DropDownField extends StatefulWidget {
     super.key,
     required this.dropdownString,
     required this.hintText,
-    required this.icon,
+    this.icon,
+    this.inputBorder,
+    this.hintTextStyle,
+    this.textStyle,
+    this.iconSize,
   });
 
   final List<String> dropdownString;
   final String hintText;
-  final Icon icon;
+  final Icon? icon;
+  final InputBorder? inputBorder;
+  final TextStyle? hintTextStyle;
+  final TextStyle? textStyle;
+  final double? iconSize;
 
   @override
   State<StatefulWidget> createState() => _DropDownFieldState();
@@ -26,13 +34,14 @@ class _DropDownFieldState extends State<DropDownField> {
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
         hintText: widget.hintText,
-        hintStyle: Theme.of(context).textTheme.titleLarge,
+        hintStyle: widget.hintTextStyle ?? Theme.of(context).textTheme.titleLarge,
         prefixIcon: widget.icon,
-        border: OutlineInputBorder(
+        border: widget.inputBorder ?? OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(screenWidth * 0.04)),
         ),
         isDense: true,
       ),
+      iconSize: widget.iconSize ?? 24,
       menuMaxHeight: screenHeight * 0.3,
       items: widget.dropdownString.map<DropdownMenuItem<String>>((e) {
         return DropdownMenuItem<String>(
@@ -40,7 +49,7 @@ class _DropDownFieldState extends State<DropDownField> {
           child: Text(e),
         );
       }).toList(),
-      style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.normal),
+      style: widget.textStyle ?? Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.normal),
       onChanged: (e) {},
     );
   }

@@ -50,3 +50,48 @@ class InputField extends StatelessWidget {
     );
   }
 }
+
+class EditInputField extends StatelessWidget {
+  final bool obscure;
+  final Icon? suffixIcon;
+  final TextInputFormatter? textInputFormatter;
+  final String? type;
+  final TextStyle style;
+  final Function(String)? onChange;
+  final String? initialText;
+
+  const EditInputField({
+    super.key,
+    required this.obscure,
+    this.suffixIcon,
+    this.textInputFormatter,
+    this.type,
+    this.onChange,
+    this.initialText,
+    required this.style,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      initialValue: initialText,
+      decoration: InputDecoration(
+        suffixIcon: suffixIcon != null
+            ? Padding(
+          padding: EdgeInsets.only(left: screenWidth * 0.02, right: 0),
+          child: suffixIcon,
+        ) : const SizedBox(width: 0, height: 0),
+        border: const UnderlineInputBorder(),
+        isDense: true,
+      ),
+      obscureText: obscure,
+      style: style,
+      inputFormatters: [
+        textInputFormatter != null
+            ? textInputFormatter!
+            : FilteringTextInputFormatter.deny(RegExp(r'')),
+      ],
+    );
+  }
+
+}

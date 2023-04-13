@@ -83,14 +83,18 @@ final appThemeLight = ThemeData(
     centerTitle: false,
     titleSpacing: 10,
     iconTheme: const IconThemeData(
-      size: 25,
+      size: 30,
       color: Colors.black,
     ),
     titleTextStyle: TextStyle(
       fontSize: 26,
       fontWeight: FontWeight.w900,
-      color: primaryLightColor,
+      color: textLightColor,
     ),
+    actionsIconTheme: const IconThemeData(
+      size: 30,
+      color: Colors.black,
+    )
   ),
 
   elevatedButtonTheme: ElevatedButtonThemeData(

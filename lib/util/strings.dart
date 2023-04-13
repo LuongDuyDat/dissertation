@@ -44,6 +44,14 @@ String shortTrainingProgramString = lang == 'vi' ? 'CTDT' : 'Program';
 String moduleString = lang == 'vi' ? 'Học phần' : 'Module';
 String lecturerString = lang == 'vi' ? 'Giảng viên' : 'Lecturer';
 String partnerString = lang == 'vi' ? 'Đối tác' : 'Partner';
+String myProfileString = lang == 'vi' ? 'Hồ sơ cá nhân' : 'My Profile';
+String settingString = lang == 'vi' ? 'Cài đặt' : 'Settings';
+String shortStudentIdString = lang == 'vi' ? 'MSV' : 'Student ID';
+String myCVString = lang == 'vi' ? 'CV của tôi' : 'My CV';
+String changePasswordString = lang == 'vi' ? 'Thay đổi mật khẩu' : 'Change Password';
+String logOutString = lang == 'vi' ? 'Đăng xuất' : 'Sign Out';
+String editProfileString = lang == 'vi' ? 'Chỉnh sửa hồ sơ' : 'Edit Profile';
+String dateOfBirthString = lang == 'vi' ? 'Ngày sinh' : 'Birthday';
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];
