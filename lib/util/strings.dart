@@ -52,6 +52,14 @@ String changePasswordString = lang == 'vi' ? 'Thay đổi mật khẩu' : 'Chang
 String logOutString = lang == 'vi' ? 'Đăng xuất' : 'Sign Out';
 String editProfileString = lang == 'vi' ? 'Chỉnh sửa hồ sơ' : 'Edit Profile';
 String dateOfBirthString = lang == 'vi' ? 'Ngày sinh' : 'Birthday';
+String languageString = lang == 'vi' ? 'Ngôn ngữ' : 'Language';
+String vietnameseString = lang == 'vi' ? 'Tiếng Việt' : 'Vietnamese';
+String englishString = lang == 'vi' ? 'Tiếng Anh' : 'English';
+String darkModeString = lang == 'vi' ? 'Chế độ tối' : 'Dark Mode';
+String onString = lang == 'vi' ? 'Bật' : 'On';
+String offString = lang == 'vi' ? 'Tắt' : 'Off';
+String doNotDisturbString = lang == 'vi' ? 'Không làm phiền' : 'Do not disturb';
+String soundString = lang == 'vi' ? 'Âm báo' : 'Sound';
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];

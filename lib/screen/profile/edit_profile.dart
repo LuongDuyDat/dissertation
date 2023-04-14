@@ -62,7 +62,6 @@ class EditProfilePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(fullNameString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                  SizedBox(height: 0.004 * screenHeight),
                   EditInputField(
                     obscure: false,
                     style: Theme.of(context).textTheme.headlineMedium!,
@@ -70,7 +69,6 @@ class EditProfilePage extends StatelessWidget {
                   ),
                   SizedBox(height: 0.028 * screenHeight),
                   Text(emailString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                  SizedBox(height: 0.004 * screenHeight),
                   EditInputField(
                     obscure: false,
                     style: Theme.of(context).textTheme.headlineMedium!,
@@ -79,7 +77,6 @@ class EditProfilePage extends StatelessWidget {
                   ),
                   SizedBox(height: 0.028 * screenHeight),
                   Text(facultyString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                  SizedBox(height: 0.004 * screenHeight),
                   DropDownField(
                     dropdownString: facultyDropDownString,
                     hintText: facultyString,
@@ -90,7 +87,6 @@ class EditProfilePage extends StatelessWidget {
                   ),
                   SizedBox(height: 0.028 * screenHeight),
                   Text(classString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                  SizedBox(height: 0.004 * screenHeight),
                   DropDownField(
                     dropdownString: classDropDownString,
                     hintText: classString,
@@ -101,7 +97,6 @@ class EditProfilePage extends StatelessWidget {
                   ),
                   SizedBox(height: 0.028 * screenHeight),
                   Text(dateOfBirthString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                  SizedBox(height: 0.004 * screenHeight),
                   EditInputField(
                     obscure: false,
                     style: Theme.of(context).textTheme.headlineMedium!,

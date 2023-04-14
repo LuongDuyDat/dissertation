@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/screen/profile/edit_profile.dart';
+import 'package:learning_intern_support_system/screen/setting.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
@@ -120,10 +121,18 @@ class ProfilePage extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  myProfileTile(context, Icons.settings, settingString, Icons.arrow_forward_ios),
+                  myProfileTile(
+                    context,
+                    Icons.settings,
+                    settingString,
+                    Icons.arrow_forward_ios,
+                    () {
+                      Navigate.pushNewScreen(context, const SettingPage(), true);
+                    },
+                  ),
                   Divider(thickness: 1.5, color: backgroundLightColor2, height: 3,),
                   SizedBox(height: 0.01 * screenHeight,),
-                  myProfileTile(context, Icons.description, myCVString, Icons.arrow_forward_ios),
+                  myProfileTile(context, Icons.description, myCVString, Icons.arrow_forward_ios, null),
                   Divider(thickness: 1.5, color: backgroundLightColor2, height: 3,),
                 ],
               ),
@@ -143,10 +152,10 @@ class ProfilePage extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  myProfileTile(context, Icons.key, changePasswordString, Icons.arrow_forward_ios),
+                  myProfileTile(context, Icons.key, changePasswordString, Icons.arrow_forward_ios, null),
                   Divider(thickness: 1.5, color: backgroundLightColor2, height: 3,),
                   SizedBox(height: 0.01 * screenHeight,),
-                  myProfileTile(context, Icons.logout, logOutString, null),
+                  myProfileTile(context, Icons.logout, logOutString, null, null),
                   Divider(thickness: 1.5, color: backgroundLightColor2, height: 3,),
                 ],
               ),
@@ -157,13 +166,14 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget myProfileTile(BuildContext context, IconData icon, String title, IconData? action) {
+  Widget myProfileTile(BuildContext context, IconData icon, String title, IconData? action, Function()? onTap) {
     return ListTile(
       dense: true,
       contentPadding: EdgeInsets.zero,
       leading: Icon(icon, color: textLightColor, size: 0.03 * screenHeight,),
       title: Text(title, style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w800),),
       trailing: action != null ? Icon(action, color: textLightColor, size: 0.03 * screenHeight,) : const SizedBox(),
+      onTap: onTap,
     );
   }
 
