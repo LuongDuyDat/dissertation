@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learning_intern_support_system/screen/login.dart';
+import 'package:learning_intern_support_system/screen/profile/change_password.dart';
 import 'package:learning_intern_support_system/screen/profile/edit_profile.dart';
 import 'package:learning_intern_support_system/screen/profile/my_cv.dart';
 import 'package:learning_intern_support_system/screen/setting.dart';
@@ -161,10 +163,26 @@ class ProfilePage extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  myProfileTile(context, Icons.key, changePasswordString, Icons.arrow_forward_ios, null),
+                  myProfileTile(
+                    context,
+                    Icons.key,
+                    changePasswordString,
+                    Icons.arrow_forward_ios,
+                    () {
+                      Navigate.pushNewScreen(context, const ChangePasswordPage(), true,);
+                    },
+                  ),
                   Divider(thickness: 1.5, color: backgroundLightColor2, height: 3,),
                   SizedBox(height: 0.01 * screenHeight,),
-                  myProfileTile(context, Icons.logout, logOutString, null, null),
+                  myProfileTile(
+                    context,
+                    Icons.logout,
+                    logOutString,
+                    null,
+                    () {
+                      Navigate.pushPage(context, const LoginPage(),);
+                    }
+                  ),
                   Divider(thickness: 1.5, color: backgroundLightColor2, height: 3,),
                 ],
               ),

@@ -78,7 +78,7 @@ class EditInputField extends StatelessWidget {
       decoration: InputDecoration(
         suffixIcon: suffixIcon != null
             ? Padding(
-          padding: EdgeInsets.only(left: screenWidth * 0.02, right: 0),
+          padding: EdgeInsets.only(left: screenWidth * 0.02, right: 0, top: 0.01 * screenHeight,),
           child: suffixIcon,
         ) : const SizedBox(width: 0, height: 0),
         border: const UnderlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(0))),
