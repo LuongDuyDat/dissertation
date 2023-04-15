@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/screen/profile/edit_profile.dart';
+import 'package:learning_intern_support_system/screen/profile/my_cv.dart';
 import 'package:learning_intern_support_system/screen/setting.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
@@ -132,7 +133,15 @@ class ProfilePage extends StatelessWidget {
                   ),
                   Divider(thickness: 1.5, color: backgroundLightColor2, height: 3,),
                   SizedBox(height: 0.01 * screenHeight,),
-                  myProfileTile(context, Icons.description, myCVString, Icons.arrow_forward_ios, null),
+                  myProfileTile(
+                    context,
+                    Icons.description,
+                    myCVString,
+                    Icons.arrow_forward_ios,
+                    () {
+                      Navigate.pushNewScreen(context, const MyCVPage(), true);
+                    },
+                  ),
                   Divider(thickness: 1.5, color: backgroundLightColor2, height: 3,),
                 ],
               ),
