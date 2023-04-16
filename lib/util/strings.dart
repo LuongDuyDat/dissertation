@@ -64,6 +64,10 @@ String soundString = lang == 'vi' ? 'Âm báo' : 'Sound';
 String oldPasswordString = lang == 'vi' ? 'Mật khẩu cũ' : 'Old Password';
 String newPasswordString = lang == 'vi' ? 'Mật khẩu mới' : 'New Password';
 String reEnterPasswordString = lang == 'vi' ? 'Nhập lại mật khẩu' : 'Re-enter Password';
+String markAllString = lang == 'vi' ? 'Đánh dấu tất cả đã đọc' : 'Mark all as read';
+String newString = lang == 'vi' ? 'Mới' : 'New';
+String earlierString = lang == 'vi' ? 'Trước đây' : 'Earlier';
+
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];
