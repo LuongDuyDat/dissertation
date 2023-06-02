@@ -67,7 +67,21 @@ String reEnterPasswordString = lang == 'vi' ? 'Nhập lại mật khẩu' : 'Re-
 String markAllString = lang == 'vi' ? 'Đánh dấu tất cả đã đọc' : 'Mark all as read';
 String newString = lang == 'vi' ? 'Mới' : 'New';
 String earlierString = lang == 'vi' ? 'Trước đây' : 'Earlier';
+String timetableString = lang == 'vi' ? 'Thời gian biểu' : 'Timetable';
+String termString = lang == 'vi' ? 'Kì học' : 'Term';
+String addTimetableString = lang == 'vi' ? 'Thêm thời gian biểu' : 'Add Timetable';
+String classString2 = lang == 'vi' ? 'Lớp học' : 'Class';
+String assignmentString = lang == 'vi' ? 'Bài tập' : 'Assignment';
+String shortDeadlineString = 'DL';
+String categoryString = lang == 'vi' ? 'Loại' : 'Category';
+String fromString = lang == 'vi' ? 'Từ' : 'From';
+String toString = lang == 'vi' ? 'Đến' : 'To';
+String locationString = lang == 'vi' ? 'Địa điểm' : 'Location';
+String timeString = lang == 'vi' ? 'Thời gian' : 'Time';
+String subjectNameString = lang == 'vi' ? 'Tên môn học' : 'Subject Name';
+String addString = lang == 'vi' ? 'Thêm' : 'Add';
 
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];
+List<String> categoryDropDownString = [classString2, assignmentString];

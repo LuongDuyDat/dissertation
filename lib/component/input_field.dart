@@ -11,6 +11,9 @@ class InputField extends StatelessWidget {
   final TextInputFormatter? textInputFormatter;
   final String? type;
   final Function(String)? onChange;
+  final InputBorder? inputBorder;
+  final TextStyle? hintTextStyle;
+  final TextStyle? textStyle;
 
   const InputField({
     Key? key,
@@ -21,6 +24,9 @@ class InputField extends StatelessWidget {
     this.type,
     this.obscure = false,
     this.onChange,
+    this.inputBorder,
+    this.hintTextStyle,
+    this.textStyle,
   }) : super(key: key);
 
   @override
@@ -28,20 +34,21 @@ class InputField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: Theme.of(context).textTheme.titleLarge,
+        hintStyle: hintTextStyle ?? Theme.of(context).textTheme.titleLarge,
         prefixIcon: icon,
         suffixIcon: suffixIcon != null
             ? Padding(
           padding: EdgeInsets.only(left: screenWidth * 0.02, right: 0),
           child: suffixIcon,
         ) : const SizedBox(width: 0, height: 0),
-        border: OutlineInputBorder(
+        border: inputBorder ?? OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(screenWidth * 0.04)),
         ),
         isDense: true,
       ),
       obscureText: obscure,
-      style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.normal),
+      style: textStyle ?? Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.normal),
+      textAlignVertical: TextAlignVertical.center,
       inputFormatters: [
         textInputFormatter != null
             ? textInputFormatter!
