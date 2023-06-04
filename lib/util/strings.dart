@@ -78,10 +78,37 @@ String fromString = lang == 'vi' ? 'Từ' : 'From';
 String toString = lang == 'vi' ? 'Đến' : 'To';
 String locationString = lang == 'vi' ? 'Địa điểm' : 'Location';
 String timeString = lang == 'vi' ? 'Thời gian' : 'Time';
-String subjectNameString = lang == 'vi' ? 'Tên môn học' : 'Subject Name';
+String moduleNameString = lang == 'vi' ? 'Tên học phần' : 'Module Name';
 String addString = lang == 'vi' ? 'Thêm' : 'Add';
+String addTermString = lang == 'vi' ? 'Thêm kỳ học' : 'Add Term';
+String startString = lang == 'vi' ? 'Bắt đầu' : 'Start';
+String endString = lang == 'vi' ? 'Kết thúc' : 'End';
+String editString = lang == 'vi' ? 'Chỉnh sửa' : 'Edit';
+String addModuleString = lang == 'vi' ? 'Thêm môn học' : 'Add Module';
+String editModuleString = lang == 'vi' ? 'Chỉnh sửa môn học' : 'Edit Module';
+String classesString = lang == 'vi' ? 'Lớp học' : 'Classes';
+String lectureString = lang == 'vi' ? 'Lý thuyết' : 'Lecture';
+String practicalString = lang == 'vi' ? 'Thực hành' : 'Practical';
+String addClassString = lang == 'vi' ? 'Thêm lớp học' : 'Add Class';
+String repeatString = lang == 'vi' ? 'Lặp lại' : 'Repeat';
+String neverString = lang == 'vi' ? 'Không' : 'Never';
+String eachWeekString = lang == 'vi' ? 'Mỗi tuần' : 'Each Week';
+String each2WeeksString = lang == 'vi' ? 'Mỗi 2 tuần' : 'Each 2 Weeks';
+String eachMonthString = lang == 'vi' ? 'Mỗi tháng' : 'Each Month';
+String each2MonthsString = lang == 'vi' ? 'Mỗi 2 tháng' : 'Each 2 Months';
 
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];
+List<String> classTypeDropDownString = [lectureString, practicalString];
+List<String> repeatClassDropDownString = [neverString, eachWeekString, each2WeeksString, eachMonthString, each2MonthsString];
 List<String> categoryDropDownString = [classString2, assignmentString];
+List<String> daysOfWeek = [
+  lang == 'vi' ? 'Thứ hai' : 'Monday',
+  lang == 'vi' ? 'Thứ ba' : 'Tuesday',
+  lang == 'vi' ? 'Thứ tư' : 'Wednesday',
+  lang == 'vi' ? 'Thứ năm' : 'Thursday',
+  lang == 'vi' ? 'Thứ sáu' : 'Friday',
+  lang == 'vi' ? 'Thứ bảy' : 'Saturday',
+  lang == 'vi' ? 'Chủ nhật' : 'Sunday',
+];

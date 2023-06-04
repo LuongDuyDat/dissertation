@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:learning_intern_support_system/component/input_field.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
-import 'package:learning_intern_support_system/util/theme.dart';
 
-import '../../component/button.dart';
-import '../../component/dropdown_field.dart';
-import '../../util/global.dart';
-import '../../util/navigate.dart';
+import '../../../component/button.dart';
+import '../../../component/dropdown_field.dart';
+import '../../../component/input_field.dart';
+import '../../../util/global.dart';
+import '../../../util/navigate.dart';
+import '../../../util/theme.dart';
 
-class TimetableAddPage extends StatelessWidget {
-  const TimetableAddPage({super.key});
+class AddClassPage extends StatelessWidget {
+  const AddClassPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class TimetableAddPage extends StatelessWidget {
             Navigate.popPage(context);
           },
         ),
-        title: Text(addTimetableString),
+        title: Text(addClassString),
         elevation: 0,
       ),
       body: Padding(
@@ -34,8 +34,8 @@ class TimetableAddPage extends StatelessWidget {
             SizedBox(
               height: 0.06 * screenHeight,
               child: DropDownField(
-                icon: Icon(Icons.school, size: 0.03 * screenHeight,),
-                dropdownString: categoryDropDownString,
+                icon: Icon(Icons.class_, size: 0.03 * screenHeight,),
+                dropdownString: classTypeDropDownString,
                 hintText: categoryString,
                 inputBorder: const UnderlineInputBorder(),
                 hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
@@ -44,19 +44,6 @@ class TimetableAddPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 0.0324 * screenHeight,),
-            Text(moduleNameString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-            SizedBox(
-              height: 0.06 * screenHeight,
-              child: InputField(
-                icon: Icon(Icons.title, size: 0.03 * screenHeight,),
-                hintText: moduleNameString,
-                hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
-                textStyle: Theme.of(context).textTheme.bodyLarge,
-                obscure: false,
-                inputBorder: const UnderlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 0.02 * screenHeight,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -85,6 +72,50 @@ class TimetableAddPage extends StatelessWidget {
                   children: [
                     Text(toString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
                     //todo: time picker
+                    SizedBox(
+                      height: 0.06 * screenHeight,
+                      width: 0.418 * screenWidth,
+                      child: DropDownField(
+                        icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
+                        dropdownString: categoryDropDownString,
+                        hintText: toString,
+                        inputBorder: const UnderlineInputBorder(),
+                        hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
+                        textStyle: Theme.of(context).textTheme.bodyLarge,
+                        iconSize: 0.05 * screenHeight,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: 0.0324 * screenHeight,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(repeatString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+                    SizedBox(
+                      height: 0.06 * screenHeight,
+                      width: 0.42 * screenWidth,
+                      child: DropDownField(
+                        icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
+                        dropdownString: repeatClassDropDownString,
+                        hintText: repeatString,
+                        inputBorder: const UnderlineInputBorder(),
+                        hintTextStyle: Theme.of(context).textTheme.titleMedium!.copyWith(color: hintLightText2),
+                        textStyle: Theme.of(context).textTheme.bodyMedium,
+                        iconSize: 0.05 * screenHeight,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                     SizedBox(
                       height: 0.06 * screenHeight,
                       width: 0.418 * screenWidth,
