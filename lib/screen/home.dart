@@ -5,6 +5,7 @@ import 'package:learning_intern_support_system/component/logo_with_image.dart';
 import 'package:learning_intern_support_system/component/logo_with_name.dart';
 import 'package:learning_intern_support_system/component/post.dart';
 import 'package:learning_intern_support_system/screen/search/search.dart';
+import 'package:learning_intern_support_system/screen/training_program/training_program.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
@@ -55,19 +56,61 @@ class HomePage extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
                       children: [
-                        const TopicWithImage(logo: 'assets/images/fit-logo.png', name: 'Công nghệ thông tin CLC'),
+                        TopicWithImage(
+                          logo: 'assets/images/fit-logo.png',
+                          name: 'Công nghệ thông tin CLC',
+                          onTap: () {
+                            Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Công nghệ thông tin CLC'), true);
+                          },
+                        ),
                         SizedBox(width: 0.077 * screenWidth,),
-                        const TopicWithImage(logo: 'assets/images/avitech.png', name: 'Công nghệ kỹ thuật điện tử – viễn thông CLC'),
+                        TopicWithImage(
+                          logo: 'assets/images/avitech.png',
+                          name: 'Công nghệ kỹ thuật điện tử – viễn thông CLC',
+                          onTap: () {
+                            Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Công nghệ kỹ thuật điện tử – viễn thông CLC'), true);
+                          },
+                        ),
                         SizedBox(width: 0.077 * screenWidth,),
-                        const TopicWithImage(logo: 'assets/images/aerospace.png', name: 'Kỹ thuật máy tính'),
+                        TopicWithImage(
+                          logo: 'assets/images/aerospace.png',
+                          name: 'Kỹ thuật máy tính',
+                          onTap: () {
+                            Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Kỹ thuật máy tính'), true);
+                          },
+                        ),
                         SizedBox(width: 0.077 * screenWidth,),
-                        const TopicWithImage(logo: 'assets/images/fema.png', name: 'Kỹ thuật robot'),
+                        TopicWithImage(
+                          logo: 'assets/images/fema.png',
+                          name: 'Kỹ thuật robot',
+                          onTap: () {
+                            Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Kỹ thuật robot'), true);
+                          },
+                        ),
                         SizedBox(width: 0.077 * screenWidth,),
-                        const TopicWithImage(logo: 'assets/images/logo_fet.png', name: 'Cơ kỹ thuật'),
+                        TopicWithImage(
+                          logo: 'assets/images/logo_fet.png',
+                          name: 'Cơ kỹ thuật',
+                          onTap: () {
+                            Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Cơ kỹ thuật'), true);
+                          },
+                        ),
                         SizedBox(width: 0.077 * screenWidth,),
-                        const TopicWithImage(logo: 'assets/images/nong_nghiep.jpg', name: 'Công nghệ kỹ thuật xây dựng'),
+                        TopicWithImage(
+                          logo: 'assets/images/nong_nghiep.jpg',
+                          name: 'Công nghệ kỹ thuật xây dựng',
+                          onTap: () {
+                            Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Công nghệ kỹ thuật xây dựng'), true);
+                          },
+                        ),
                         SizedBox(width: 0.077 * screenWidth,),
-                        const TopicWithImage(logo: 'assets/images/physics.png', name: 'Công nghệ hàng không vũ trụ'),
+                        TopicWithImage(
+                          logo: 'assets/images/physics.png',
+                          name: 'Công nghệ hàng không vũ trụ',
+                          onTap: () {
+                            Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Công nghệ hàng không vũ trụ'), true);
+                          },
+                        ),
                       ],
                     ),
                   ),

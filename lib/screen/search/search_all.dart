@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/component/list_tile.dart';
 import 'package:learning_intern_support_system/component/logo_with_image.dart';
 import 'package:learning_intern_support_system/component/logo_with_name.dart';
+import 'package:learning_intern_support_system/screen/training_program/training_program.dart';
 
 import '../../util/global.dart';
 import '../../util/navigate.dart';
@@ -93,7 +94,9 @@ class SearchAllPage extends StatelessWidget {
                       title: 'Cong nghe thong tin',
                       large: 0.054 * screenHeight,
                       subtitle: 'Cong nghe thong tin',
-                      onTap: () {},
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Cong nghe thong tin'), true);
+                      },
                     ),
                     SizedBox(height: 0.01 * screenHeight,),
                     RectListItemTile(
@@ -101,7 +104,9 @@ class SearchAllPage extends StatelessWidget {
                       title: 'Công nghệ hàng không vũ trụ',
                       subtitle: 'Vien hang khong vu tru',
                       large: 0.054 * screenHeight,
-                      onTap: () {},
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Công nghệ hàng không vũ trụ'), true);
+                      },
                     ),
                     SizedBox(height: 0.01 * screenHeight,),
                     RectListItemTile(
@@ -109,7 +114,9 @@ class SearchAllPage extends StatelessWidget {
                       title: 'Vat ly ky thuat',
                       subtitle: 'Khoa Vat ly va Nano',
                       large: 0.054 * screenHeight,
-                      onTap: () {},
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Vat ly ky thuat'), true);
+                      },
                     ),
                     SizedBox(height: 0.01 * screenHeight,),
                     RectListItemTile(
@@ -117,7 +124,9 @@ class SearchAllPage extends StatelessWidget {
                       title: 'Cong nghe nong nghiep',
                       subtitle: 'Khoa cong nghiep ky thuat',
                       large: 0.054 * screenHeight,
-                      onTap: () {},
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const TrainingProgramPage(programName: 'Cong nghe nong nghiep'), true);
+                      },
                     ),
                   ],
                 ),
