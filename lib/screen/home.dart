@@ -4,6 +4,7 @@ import 'package:learning_intern_support_system/component/circle_functionality.da
 import 'package:learning_intern_support_system/component/logo_with_image.dart';
 import 'package:learning_intern_support_system/component/logo_with_name.dart';
 import 'package:learning_intern_support_system/component/post.dart';
+import 'package:learning_intern_support_system/screen/learning_process/learning_process_statistic.dart';
 import 'package:learning_intern_support_system/screen/search/search.dart';
 import 'package:learning_intern_support_system/screen/training_program/training_program.dart';
 import 'package:learning_intern_support_system/util/global.dart';
@@ -140,7 +141,13 @@ class HomePage extends StatelessWidget {
                   SizedBox(height: 0.02 * screenHeight,),
                   Text(studyProcessString, style: Theme.of(context).textTheme.displaySmall,),
                   SizedBox(height: 0.015 * screenHeight,),
-                  CircleFunctionality(icon: Icons.bar_chart, name: statisticString),
+                  CircleFunctionality(
+                    icon: Icons.bar_chart,
+                    name: statisticString,
+                    onTap: () {
+                      Navigate.pushNewScreen(context, const LearningProcessStatisticalPage(), true);
+                    },
+                  ),
                   SizedBox(height: 0.03 * screenHeight,),
                   Text(internString, style: Theme.of(context).textTheme.displaySmall,),
                   SizedBox(height: 0.015 * screenHeight,),

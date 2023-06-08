@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../util/global.dart';
+import '../util/strings.dart';
+import '../util/theme.dart';
+
 class RectListItemTile extends StatelessWidget {
   final Widget leadingAsset;
   final String title;
@@ -88,4 +92,68 @@ class CirListItemTile extends StatelessWidget {
       onTap: onTap,
     );
   }
+}
+
+class MoreListTile extends StatelessWidget {
+  const MoreListTile({super.key, required this.title, required this.icon});
+
+  final String title;
+  final Icon icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.w800, ),
+            ),
+            icon,
+          ],
+        ),
+        SizedBox(height: 0.004 * screenHeight,),
+        Divider(thickness: 1, color: textLightColor, height: 3,),
+      ],
+    );
+  }
+
+}
+
+class ViewModuleListTile extends StatelessWidget {
+  const ViewModuleListTile({super.key, required this.label, required this.creditNumber, this.suffixIcon});
+
+  final String label;
+  final int creditNumber;
+  final Icon? suffixIcon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            RichText(
+              text: TextSpan(
+                  children: [
+                    TextSpan(text: '$label: ', style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w800, ),),
+                    TextSpan(
+                      text: '$creditNumber $creditString',
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal, ),
+                    ),
+                  ]
+              ),
+            ),
+            suffixIcon ?? const SizedBox()
+          ],
+        ),
+        SizedBox(height: 0.004 * screenHeight,),
+        Divider(thickness: 1, color: textLightColor, height: 3,),
+      ],
+    );
+  }
+
 }
