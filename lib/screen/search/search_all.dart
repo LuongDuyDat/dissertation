@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/component/list_tile.dart';
 import 'package:learning_intern_support_system/component/logo_with_image.dart';
 import 'package:learning_intern_support_system/component/logo_with_name.dart';
+import 'package:learning_intern_support_system/screen/profile/company_profile.dart';
+import 'package:learning_intern_support_system/screen/profile/teacher_profile.dart';
 import 'package:learning_intern_support_system/screen/training_program/training_program.dart';
 
 import '../../util/global.dart';
@@ -191,7 +193,9 @@ class SearchAllPage extends StatelessWidget {
                       title: 'Ts.Duong Le Minh',
                       subtitle: 'Khoa Cong nghe thong tin',
                       large: 0.027 * screenHeight,
-                      onTap: () {},
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const TeacherProfile(name: 'Duong Le Minh'), true);
+                      },
                     ),
                     SizedBox(height: 0.01 * screenHeight,),
                     CirListItemTile(
@@ -199,7 +203,9 @@ class SearchAllPage extends StatelessWidget {
                       title: 'Ths.Doan Thi Hoai Thu',
                       subtitle: 'Khoa Cong nghe thong tin',
                       large: 0.027 * screenHeight,
-                      onTap: () {},
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const TeacherProfile(name: 'Doan Thi Hoai Thu'), true);
+                      },
                     ),
                     SizedBox(height: 0.01 * screenHeight,),
                     CirListItemTile(
@@ -207,7 +213,9 @@ class SearchAllPage extends StatelessWidget {
                       title: 'PGS TS.Ha Quang Thuy',
                       subtitle: 'Khoa Cong nghe thong tin',
                       large: 0.027 * screenHeight,
-                      onTap: () {},
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const TeacherProfile(name: 'Ha Quang Thuy'), true);
+                      },
                     ),
                   ],
                 ),
@@ -224,7 +232,9 @@ class SearchAllPage extends StatelessWidget {
                       backgroundColor: backgroundLightColor2,
                       title: 'Cong ty FPT',
                       large: 0.027 * screenHeight,
-                      onTap: () {},
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const CompanyProfile(name: 'Cong ty FPT'), true);
+                      },
                     ),
                     SizedBox(height: 0.01 * screenHeight,),
                     CirListItemTile(
@@ -232,7 +242,9 @@ class SearchAllPage extends StatelessWidget {
                       backgroundColor: backgroundLightColor2,
                       title: 'Cong ty FPT',
                       large: 0.027 * screenHeight,
-                      onTap: () {},
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const CompanyProfile(name: 'Cong ty FPT'), true);
+                      },
                     ),
                     SizedBox(height: 0.01 * screenHeight,),
                     CirListItemTile(
@@ -240,7 +252,9 @@ class SearchAllPage extends StatelessWidget {
                       backgroundColor: backgroundLightColor2,
                       title: 'Cong ty FPT',
                       large: 0.027 * screenHeight,
-                      onTap: () {},
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const CompanyProfile(name: 'Cong ty FPT'), true);
+                      },
                     ),
                   ],
                 ),

@@ -11,41 +11,49 @@ List<Module> moduleList = [
     moduleId: 'PHI1004',
     moduleName: 'Những nguyên lý cơ bản của chủ nghĩa Mác-Lênin 1',
     creditNumber: 2,
+    type: 'Hoc lan dau',
   ),
   Module(
     moduleId: 'PHI1005',
     moduleName: 'Những nguyên lý cơ bản của chủ nghĩa Mác-Lênin 2',
     creditNumber: 3,
+    type: 'Hoc lai'
   ),
   Module(
     moduleId: 'POL1001',
     moduleName: 'Tư tưởng Hồ Chí Minh',
     creditNumber: 2,
+    type: 'Hoc cai thien'
   ),
   Module(
     moduleId: 'HIS1002',
     moduleName: 'Đường lối cách mạng của Đảng Cộng sản Việt Nam',
     creditNumber: 2,
+    type: 'Hoc cai thien'
   ),
   Module(
     moduleId: 'PHI1004',
     moduleName: 'Những nguyên lý cơ bản của chủ nghĩa Mác-Lênin 1',
     creditNumber: 2,
+    type: 'Hoc lan dau',
   ),
   Module(
     moduleId: 'PHI1005',
     moduleName: 'Những nguyên lý cơ bản của chủ nghĩa Mác-Lênin 2',
     creditNumber: 3,
+    type: 'Hoc lan dau',
   ),
   Module(
     moduleId: 'POL1001',
     moduleName: 'Tư tưởng Hồ Chí Minh',
     creditNumber: 2,
+    type: 'Hoc lai',
   ),
   Module(
     moduleId: 'HIS1002',
     moduleName: 'Đường lối cách mạng của Đảng Cộng sản Việt Nam',
     creditNumber: 2,
+    type: 'Hoc lai',
   ),
 ];
 

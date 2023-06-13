@@ -145,6 +145,14 @@ String supplementaryModuleString = lang == 'vi' ? 'Học phần bổ trợ' : 'S
 String mandatoryString = lang == 'vi' ? 'Bắt buộc' : 'Mandatory';
 String optionalString = lang == 'vi' ? 'Tự chọn' : 'Optional';
 String supplementaryString = lang == 'vi' ? 'Bổ trợ' : 'Supplementary';
+String personalInformationString = lang == 'vi' ? 'Thông tin cá nhân' : 'Personal Information';
+String moduleInChargeString = lang == 'vi' ? 'Học phần phụ trách' : 'Modules In Charge';
+String telephoneString = lang == 'vi' ? 'Điện thoại' : 'Telephone';
+String faxString = 'Fax';
+String contactInformationString = lang == 'vi' ? 'Thông tin liên lạc' : 'Contact Information';
+String introductionString = lang == 'vi' ? 'Giới thiệu' : 'Introduction';
+String recruitmentPostString = lang == 'vi' ? 'Bài đăng tuyển dụng' : 'Recruitment Posts';
+String headOfficeString = lang == 'vi' ? 'Trụ sở chính' : 'Head Office';
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];
