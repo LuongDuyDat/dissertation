@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:learning_intern_support_system/util/theme.dart';
 
 import '../util/global.dart';
 
@@ -66,6 +67,7 @@ class EditInputField extends StatelessWidget {
   final TextStyle style;
   final Function(String)? onChange;
   final String? initialText;
+  final String? hintText;
 
   const EditInputField({
     super.key,
@@ -75,6 +77,7 @@ class EditInputField extends StatelessWidget {
     this.type,
     this.onChange,
     this.initialText,
+    this.hintText,
     required this.style,
   });
 
@@ -90,6 +93,8 @@ class EditInputField extends StatelessWidget {
         ) : const SizedBox(width: 0, height: 0),
         border: const UnderlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(0))),
         isDense: true,
+        hintStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(color: hintLightText2, fontWeight: FontWeight.w500),
+        hintText: hintText ?? '',
         contentPadding: const EdgeInsets.only(top: 15),
       ),
       obscureText: obscure,

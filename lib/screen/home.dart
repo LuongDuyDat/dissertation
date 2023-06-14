@@ -4,6 +4,9 @@ import 'package:learning_intern_support_system/component/circle_functionality.da
 import 'package:learning_intern_support_system/component/logo_with_image.dart';
 import 'package:learning_intern_support_system/component/logo_with_name.dart';
 import 'package:learning_intern_support_system/component/post.dart';
+import 'package:learning_intern_support_system/screen/intern/intern_report.dart';
+import 'package:learning_intern_support_system/screen/intern/internship_register.dart';
+import 'package:learning_intern_support_system/screen/intern/partner_list.dart';
 import 'package:learning_intern_support_system/screen/learning_process/learning_process_statistic.dart';
 import 'package:learning_intern_support_system/screen/search/search.dart';
 import 'package:learning_intern_support_system/screen/training_program/training_program.dart';
@@ -154,11 +157,29 @@ class HomePage extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CircleFunctionality(icon: Icons.app_registration, name: signUpString),
+                      CircleFunctionality(
+                        icon: Icons.app_registration,
+                        name: signUpString,
+                        onTap: () {
+                          Navigate.pushNewScreen(context, const InternshipRegisterPage(), true);
+                        },
+                      ),
                       SizedBox(width: 0.1 * screenWidth,),
-                      CircleFunctionality(icon: Icons.apartment, name: listPartnerString),
+                      CircleFunctionality(
+                        icon: Icons.apartment,
+                        name: listPartnerString,
+                        onTap: () {
+                          Navigate.pushNewScreen(context, const PartnerListPage(), true);
+                        },
+                      ),
                       SizedBox(width: 0.1 * screenWidth,),
-                      CircleFunctionality(icon: Icons.description, name: reportString),
+                      CircleFunctionality(
+                        icon: Icons.description,
+                        name: reportString,
+                        onTap: () {
+                          Navigate.pushNewScreen(context, const InternshipReportPage(), true);
+                        },
+                      ),
                     ],
                   ),
                   SizedBox(height: 0.03 * screenHeight,),

@@ -157,3 +157,51 @@ class ViewModuleListTile extends StatelessWidget {
   }
 
 }
+
+class CompanyListTile extends StatelessWidget {
+  const CompanyListTile({super.key, required this.name, required this.internArea, required this.status});
+
+  final String name;
+  final String internArea;
+  final String status;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              backgroundColor: Colors.black45,
+              radius: 0.027 * screenHeight,
+              child: Center(
+                child: Icon(Icons.apartment, size: 0.03 * screenHeight, color: Colors.white,),
+              ),
+            ),
+            SizedBox(width: 0.0327 * screenWidth,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(name, style: Theme.of(context).textTheme.bodyLarge,),
+                SizedBox(height: 0.006 * screenHeight,),
+                Text(internArea, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.normal),),
+              ],
+            ),
+          ],
+        ),
+        SizedBox(
+          width: 0.1445 * screenWidth,
+          child: Text(
+            status,
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w800),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ],
+    );
+  }
+
+}

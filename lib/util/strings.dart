@@ -153,6 +153,28 @@ String contactInformationString = lang == 'vi' ? 'Thông tin liên lạc' : 'Con
 String introductionString = lang == 'vi' ? 'Giới thiệu' : 'Introduction';
 String recruitmentPostString = lang == 'vi' ? 'Bài đăng tuyển dụng' : 'Recruitment Posts';
 String headOfficeString = lang == 'vi' ? 'Trụ sở chính' : 'Head Office';
+String internshipRegisterString = lang == 'vi' ? 'Đăng ký thực tập' : 'Internship\'s Registration';
+String partnerCompanyRegistrationString = lang == 'vi' ? 'Đăng ký công ty đối tác' : 'Registration for partner company';
+String externalCompanyRegistrationString = lang == 'vi' ? 'Đăng ký công ty ngoài' : 'Registration for external company';
+String acceptString = lang == 'vi' ? 'Chấp thuận' : 'Accept';
+String inProgressString = lang == 'vi' ? 'Đang xử lý' : 'In Progress';
+String declineString = lang == 'vi' ? 'Từ chối' : 'Decline';
+String companyNameString = lang == 'vi' ? 'Tên công ty' : 'Company \'s Name';
+String emailContactString = lang == 'vi' ? 'Email liên hệ' : 'Email Contact';
+String phoneNumberContactString = lang == 'vi' ? 'SĐT liên hệ' : 'Phone Number Contact';
+String internshipFieldString = lang == 'vi' ? 'Lĩnh vực thực tập' : 'Internship Field';
+String partnerListString = lang == 'vi' ? 'Danh sách đối tác' : 'Partner List';
+String websiteString = 'Website';
+String recruitingString = lang == 'vi' ? 'Đang tuyển' : 'Recruiting';
+String internshipReportString = lang == 'vi' ? 'Báo cáo thực tập' : 'Internship Report';
+String internshipInformationString = lang == 'vi' ? 'Thông tin thực tập' : 'Internship Information';
+String submitReportString = lang == 'vi' ? 'Nộp báo cáo' : 'Submit report';
+String resultString = lang == 'vi' ? 'Kết quả' : 'Result';
+String internshipTypeString = lang == 'vi' ? 'Loại thực tập' : 'Internship Type';
+String internshipCompanyString = lang == 'vi' ? 'Công ty thực tập' : 'Internship Company';
+String replaceString = lang == 'vi' ? 'Thay thế' : 'Replace';
+String pointString = lang == 'vi' ? 'Điểm' : 'Point';
+
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];
