@@ -174,6 +174,9 @@ String internshipTypeString = lang == 'vi' ? 'Loại thực tập' : 'Internship
 String internshipCompanyString = lang == 'vi' ? 'Công ty thực tập' : 'Internship Company';
 String replaceString = lang == 'vi' ? 'Thay thế' : 'Replace';
 String pointString = lang == 'vi' ? 'Điểm' : 'Point';
+String contactString = lang == 'vi'? 'Liên hệ' : 'Contact';
+String postedDateString = lang == 'vi'? 'Ngày đăng' : 'Posted Date';
+String expiredDateString = lang == 'vi'? 'Ngày hết hạn' : 'Expired Date';
 
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];

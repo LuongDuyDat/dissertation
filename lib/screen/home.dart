@@ -8,6 +8,7 @@ import 'package:learning_intern_support_system/screen/intern/intern_report.dart'
 import 'package:learning_intern_support_system/screen/intern/internship_register.dart';
 import 'package:learning_intern_support_system/screen/intern/partner_list.dart';
 import 'package:learning_intern_support_system/screen/learning_process/learning_process_statistic.dart';
+import 'package:learning_intern_support_system/screen/post/company_post.dart';
 import 'package:learning_intern_support_system/screen/search/search.dart';
 import 'package:learning_intern_support_system/screen/training_program/training_program.dart';
 import 'package:learning_intern_support_system/util/global.dart';
@@ -233,6 +234,9 @@ class HomePage extends StatelessWidget {
                         image: 'assets/images/post_image.jpg',
                         status: signUpString,
                         title: 'Tuyển thực tập sinh Web Frontend',
+                        onTap: () {
+                          Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                        },
                       ),
                       SizedBox(height: 0.037 * screenHeight,),
                       Post(
@@ -251,6 +255,9 @@ class HomePage extends StatelessWidget {
                         image: 'assets/images/post_image.jpg',
                         status: signUpString,
                         title: 'Tuyển thực tập sinh Web Frontend',
+                        onTap: () {
+                          Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                        },
                       ),
                     ],
                   )

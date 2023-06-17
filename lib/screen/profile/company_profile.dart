@@ -7,6 +7,7 @@ import '../../component/post.dart';
 import '../../util/global.dart';
 import '../../util/navigate.dart';
 import '../../util/theme.dart';
+import '../post/company_post.dart';
 
 class CompanyProfile extends StatelessWidget {
   const CompanyProfile({super.key, required this.name});
@@ -127,6 +128,9 @@ class CompanyProfile extends StatelessWidget {
                     image: 'assets/images/post_image.jpg',
                     status: signUpString,
                     title: 'Tuyển thực tập sinh Web Frontend',
+                    onTap: () {
+                      Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                    },
                   ),
                   SizedBox(height: 0.037 * screenHeight,),
                   Post(
@@ -136,6 +140,9 @@ class CompanyProfile extends StatelessWidget {
                     image: 'assets/images/post_image.jpg',
                     status: signUpString,
                     title: 'Tuyển thực tập sinh Web Frontend',
+                    onTap: () {
+                      Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                    },
                   ),
                   SizedBox(height: 0.037 * screenHeight,),
                   Post(
@@ -145,6 +152,9 @@ class CompanyProfile extends StatelessWidget {
                     image: 'assets/images/post_image.jpg',
                     status: signUpString,
                     title: 'Tuyển thực tập sinh Web Frontend',
+                    onTap: () {
+                      Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                    },
                   ),
                   SizedBox(height: 0.037 * screenHeight,),
                   Post(
@@ -154,6 +164,9 @@ class CompanyProfile extends StatelessWidget {
                     image: 'assets/images/post_image.jpg',
                     status: signUpString,
                     title: 'Tuyển thực tập sinh Web Frontend',
+                    onTap: () {
+                      Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                    },
                   ),
                 ],
               ),

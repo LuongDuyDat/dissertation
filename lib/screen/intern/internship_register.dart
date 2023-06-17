@@ -7,6 +7,7 @@ import 'package:learning_intern_support_system/util/strings.dart';
 import '../../util/global.dart';
 import '../../util/navigate.dart';
 import '../../util/theme.dart';
+import '../post/company_post.dart';
 
 class InternshipRegisterPage extends StatelessWidget {
   const InternshipRegisterPage({super.key});
@@ -42,6 +43,9 @@ class InternshipRegisterPage extends StatelessWidget {
                       company: 'FPT',
                       image: 'assets/images/post_image.jpg',
                       title: 'Tuyển dụng lập trình viên Web',
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                      },
                     ),
                     SizedBox(height: 0.0227 * screenHeight,),
                     RegisterStatusTile(
@@ -49,6 +53,9 @@ class InternshipRegisterPage extends StatelessWidget {
                       company: 'FPT',
                       image: 'assets/images/post_image.jpg',
                       title: 'Tuyển dụng lập trình viên Mobile',
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                      },
                     ),
                     SizedBox(height: 0.0227 * screenHeight,),
                     RegisterStatusTile(
@@ -56,6 +63,9 @@ class InternshipRegisterPage extends StatelessWidget {
                       company: 'FPT',
                       image: 'assets/images/post_image.jpg',
                       title: 'Tuyển dụng lập trình viên AI',
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                      },
                     ),
                     SizedBox(height: 0.0227 * screenHeight,),
                     RegisterStatusTile(
@@ -63,6 +73,9 @@ class InternshipRegisterPage extends StatelessWidget {
                       company: 'FPT',
                       image: 'assets/images/post_image.jpg',
                       title: 'Tuyển dụng lập trình viên Web',
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                      },
                     ),
                     SizedBox(height: 0.0227 * screenHeight,),
                     RegisterStatusTile(
@@ -70,6 +83,9 @@ class InternshipRegisterPage extends StatelessWidget {
                       company: 'FPT',
                       image: 'assets/images/post_image.jpg',
                       title: 'Tuyển dụng lập trình viên Mobile',
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                      },
                     ),
                     SizedBox(height: 0.0227 * screenHeight,),
                     RegisterStatusTile(
@@ -77,6 +93,9 @@ class InternshipRegisterPage extends StatelessWidget {
                       company: 'FPT',
                       image: 'assets/images/post_image.jpg',
                       title: 'Tuyển dụng lập trình viên AI',
+                      onTap: () {
+                        Navigate.pushNewScreen(context, const CompanyPostPage(), true);
+                      },
                     ),
                   ],
                 ),
