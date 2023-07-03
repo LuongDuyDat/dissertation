@@ -63,7 +63,7 @@ class TrainingProgramPage extends StatelessWidget {
 
 }
 
-class BottomTabBar extends StatelessWidget with PreferredSizeWidget {
+class BottomTabBar extends StatelessWidget implements PreferredSizeWidget {
   const BottomTabBar({Key? key}) : super(key: key);
 
   @override
