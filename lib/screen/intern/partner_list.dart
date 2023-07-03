@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:learning_intern_support_system/component/input_field.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
@@ -12,6 +13,8 @@ class PartnerListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormBuilderState>();
+    final searchFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -30,12 +33,17 @@ class PartnerListPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              InputField(
-                icon: Icon(Icons.search, size: 0.03 * screenHeight,),
-                hintText: searchString,
-                hintTextStyle: Theme.of(context).textTheme.titleLarge,
-                textStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w700),
-                inputBorder: const UnderlineInputBorder(),
+              FormBuilder(
+                key: formKey,
+                child: InputField(
+                  key: searchFieldKey,
+                  name: searchString,
+                  icon: Icon(Icons.search, size: 0.03 * screenHeight,),
+                  hintText: searchString,
+                  hintTextStyle: Theme.of(context).textTheme.titleLarge,
+                  textStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w700),
+                  inputBorder: const UnderlineInputBorder(),
+                ),
               ),
               SizedBox(height: 0.02 * screenHeight,),
               Row(

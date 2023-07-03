@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:learning_intern_support_system/screen/register.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
@@ -13,72 +15,88 @@ class ForgotPassPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormBuilderState>();
+    final emailFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 0.056 * screenWidth,),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 0.06 * screenHeight,),
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back,),
-                    iconSize: 30,
-                    constraints: const BoxConstraints(),
-                    padding: EdgeInsets.zero,
-                    onPressed: () {
-                      Navigate.popPage(context);
-                    },
-                  ),
-                  SizedBox(height: 0.04 * screenHeight,),
-                  Text(forgotPasswordString, style: Theme.of(context).textTheme.displayLarge, textAlign: TextAlign.center,),
-                  SizedBox(height: 0.05 * screenHeight,),
-                  Text(enterEmailString, style: Theme.of(context).textTheme.headlineSmall,),
-                  SizedBox(height: 0.004 * screenHeight),
-                  InputField(
-                    icon: const Icon(Icons.person),
-                    hintText: emailString,
-                  ),
-                  SizedBox(height: 0.004 * screenHeight),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    backToSignInString,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: primaryLightColor,
-                      decoration: TextDecoration.underline,
+          child: FormBuilder(
+            key: formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 0.06 * screenHeight,),
+                    IconButton(
+                      icon: const Icon(Icons.arrow_back,),
+                      iconSize: 30,
+                      constraints: const BoxConstraints(),
+                      padding: EdgeInsets.zero,
+                      onPressed: () {
+                        Navigate.popPage(context);
+                      },
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 0.04 * screenHeight),
-              Button(
-                type: 0,
-                width: double.infinity,
-                height: 0.056 * screenHeight,
-                text: sendToEmailString,
-              ),
-              SizedBox(height: 0.05 * screenHeight),
-              Text(orString, style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w700),),
-              SizedBox(height: 0.05 * screenHeight),
-              Button(
-                type: 1,
-                width: double.infinity,
-                height: 0.056 * screenHeight,
-                text: signUpString,
-                onPressed: () {
-                  Navigate.pushPage(context, const RegisterPage(number: 0));
-                },
-              ),
-            ],
-          ),
+                    SizedBox(height: 0.04 * screenHeight,),
+                    Text(forgotPasswordString, style: Theme.of(context).textTheme.displayLarge, textAlign: TextAlign.center,),
+                    SizedBox(height: 0.05 * screenHeight,),
+                    Text(enterEmailString, style: Theme.of(context).textTheme.headlineSmall,),
+                    SizedBox(height: 0.004 * screenHeight),
+                    InputField(
+                      key: emailFieldKey,
+                      name: emailString,
+                      icon: const Icon(Icons.person),
+                      hintText: emailString,
+                      validator: FormBuilderValidators.compose([
+                        FormBuilderValidators.required(),
+                        FormBuilderValidators.email(),
+                      ]),
+                    ),
+                    SizedBox(height: 0.004 * screenHeight),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      backToSignInString,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: primaryLightColor,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 0.04 * screenHeight),
+                Button(
+                  type: 0,
+                  width: double.infinity,
+                  height: 0.056 * screenHeight,
+                  text: sendToEmailString,
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+
+                    }
+                  },
+                ),
+                SizedBox(height: 0.05 * screenHeight),
+                Text(orString, style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w700),),
+                SizedBox(height: 0.05 * screenHeight),
+                Button(
+                  type: 1,
+                  width: double.infinity,
+                  height: 0.056 * screenHeight,
+                  text: signUpString,
+                  onPressed: () {
+                    Navigate.pushPage(context, const RegisterPage(number: 0));
+                  },
+                ),
+              ],
+            ),
+          )
         ),
       ),
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 
 import '../../../component/button.dart';
@@ -13,6 +15,9 @@ class AddClassPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormBuilderState>();
+    final lecturerFieldKey = GlobalKey<FormBuilderFieldState>();
+    final locationFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -134,44 +139,59 @@ class AddClassPage extends StatelessWidget {
               ],
             ),
             SizedBox(height: 0.0324 * screenHeight,),
-            Text(lecturerString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-            SizedBox(
-              height: 0.06 * screenHeight,
-              child: InputField(
-                icon: Icon(Icons.person, size: 0.03 * screenHeight,),
-                hintText: lecturerString,
-                hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
-                textStyle: Theme.of(context).textTheme.bodyLarge,
-                obscure: false,
-                inputBorder: const UnderlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 0.0324 * screenHeight,),
-            Text(locationString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-            SizedBox(
-              height: 0.06 * screenHeight,
-              child: InputField(
-                icon: Icon(Icons.location_pin, size: 0.03 * screenHeight,),
-                hintText: locationString,
-                hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
-                textStyle: Theme.of(context).textTheme.bodyLarge,
-                obscure: false,
-                inputBorder: const UnderlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 0.0648 * screenHeight,),
-            Align(
-              alignment: Alignment.center,
-              child: Button(
-                type: 0,
-                width: 0.58 * screenWidth,
-                height: 0.056 * screenHeight,
-                text: addString,
-                onPressed: () {
+            FormBuilder(
+              key: formKey,
+              child: Column(
+                children: [
+                  Text(lecturerString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+                  SizedBox(
+                    height: 0.06 * screenHeight,
+                    child: InputField(
+                      key: lecturerFieldKey,
+                      name: lecturerString,
+                      icon: Icon(Icons.person, size: 0.03 * screenHeight,),
+                      hintText: lecturerString,
+                      hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
+                      textStyle: Theme.of(context).textTheme.bodyLarge,
+                      obscure: false,
+                      inputBorder: const UnderlineInputBorder(),
+                      validator: FormBuilderValidators.required(),
+                    ),
+                  ),
+                  SizedBox(height: 0.0324 * screenHeight,),
+                  Text(locationString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+                  SizedBox(
+                    height: 0.06 * screenHeight,
+                    child: InputField(
+                      key: locationFieldKey,
+                      name: locationString,
+                      icon: Icon(Icons.location_pin, size: 0.03 * screenHeight,),
+                      hintText: locationString,
+                      hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
+                      textStyle: Theme.of(context).textTheme.bodyLarge,
+                      obscure: false,
+                      inputBorder: const UnderlineInputBorder(),
+                      validator: FormBuilderValidators.required(),
+                    ),
+                  ),
+                  SizedBox(height: 0.0648 * screenHeight,),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Button(
+                      type: 0,
+                      width: 0.58 * screenWidth,
+                      height: 0.056 * screenHeight,
+                      text: addString,
+                      onPressed: () {
+                        if (formKey.currentState!.validate()) {
 
-                },
+                        }
+                      },
+                    ),
+                  ),
+                ],
               ),
-            )
+            ),
           ],
         ),
       ),

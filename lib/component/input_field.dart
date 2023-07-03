@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:learning_intern_support_system/util/theme.dart';
 
 import '../util/global.dart';
@@ -15,9 +16,12 @@ class InputField extends StatelessWidget {
   final InputBorder? inputBorder;
   final TextStyle? hintTextStyle;
   final TextStyle? textStyle;
+  final String name;
+  final String? Function(String?)? validator;
 
   const InputField({
-    Key? key,
+    required Key key,
+    required this.name,
     required this.icon,
     required this.hintText,
     this.suffixIcon,
@@ -28,11 +32,14 @@ class InputField extends StatelessWidget {
     this.inputBorder,
     this.hintTextStyle,
     this.textStyle,
+    this.validator,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return FormBuilderTextField(
+      key: key,
+      name: name,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: hintTextStyle ?? Theme.of(context).textTheme.titleLarge,
@@ -50,11 +57,7 @@ class InputField extends StatelessWidget {
       obscureText: obscure,
       style: textStyle ?? Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.normal),
       textAlignVertical: TextAlignVertical.center,
-      inputFormatters: [
-        textInputFormatter != null
-            ? textInputFormatter!
-            : FilteringTextInputFormatter.deny(RegExp(r'')),
-      ],
+      validator: validator,
     );
   }
 }
@@ -68,9 +71,12 @@ class EditInputField extends StatelessWidget {
   final Function(String)? onChange;
   final String? initialText;
   final String? hintText;
+  final String name;
+  final String? Function(String?)? validator;
 
   const EditInputField({
-    super.key,
+    required Key key,
+    required this.name,
     required this.obscure,
     this.suffixIcon,
     this.textInputFormatter,
@@ -79,11 +85,14 @@ class EditInputField extends StatelessWidget {
     this.initialText,
     this.hintText,
     required this.style,
-  });
+    this.validator,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return FormBuilderTextField(
+      key: key,
+      name: name,
       initialValue: initialText,
       decoration: InputDecoration(
         suffixIcon: suffixIcon != null
@@ -99,11 +108,7 @@ class EditInputField extends StatelessWidget {
       ),
       obscureText: obscure,
       style: style,
-      inputFormatters: [
-        textInputFormatter != null
-            ? textInputFormatter!
-            : FilteringTextInputFormatter.deny(RegExp(r'')),
-      ],
+      validator: validator,
     );
   }
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:learning_intern_support_system/component/rectangle_with_color.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
@@ -34,6 +36,8 @@ class EditModuleNamePage extends StatelessWidget {
   final int type;
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormBuilderState>();
+    final titleFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -58,15 +62,21 @@ class EditModuleNamePage extends StatelessWidget {
               child: Text(moduleNameString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
             ),
             SizedBox(height: 0.004 * screenHeight,),
-            SizedBox(
-              height: 0.06 * screenHeight,
-              child: InputField(
-                icon: Icon(Icons.title, size: 0.03 * screenHeight,),
-                hintText: moduleNameString,
-                hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
-                textStyle: Theme.of(context).textTheme.bodyLarge,
-                obscure: false,
-                inputBorder: const UnderlineInputBorder(),
+            FormBuilder(
+              key: formKey,
+              child: SizedBox(
+                height: 0.06 * screenHeight,
+                child: InputField(
+                  key: titleFieldKey,
+                  name: moduleNameString,
+                  icon: Icon(Icons.title, size: 0.03 * screenHeight,),
+                  hintText: moduleNameString,
+                  hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
+                  textStyle: Theme.of(context).textTheme.bodyLarge,
+                  obscure: false,
+                  inputBorder: const UnderlineInputBorder(),
+                  validator: FormBuilderValidators.required(),
+                ),
               ),
             ),
             SizedBox(height: 0.0432 * screenHeight,),
@@ -93,7 +103,9 @@ class EditModuleNamePage extends StatelessWidget {
               height: 0.056 * screenHeight,
               text: addString,
               onPressed: () {
+                if (formKey.currentState!.validate()) {
 
+                }
               },
             ),
           ],

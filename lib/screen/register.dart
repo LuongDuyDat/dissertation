@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:learning_intern_support_system/component/dropdown_field.dart';
 import 'package:learning_intern_support_system/screen/login.dart';
 import 'package:learning_intern_support_system/util/global.dart';
@@ -16,18 +18,31 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormBuilderState>();
+    final emailFieldKey = GlobalKey<FormBuilderFieldState>();
+    final passwordFieldKey = GlobalKey<FormBuilderFieldState>();
+    final rePasswordFieldKey = GlobalKey<FormBuilderFieldState>();
+    final fullNameFieldKey = GlobalKey<FormBuilderFieldState>();
+    final idFieldKey = GlobalKey<FormBuilderFieldState>();
+    final classFieldKey = GlobalKey<FormBuilderFieldState>();
+    final facultyFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 0.056 * screenWidth),
-          child: number == 0 ? registerForm0(context) : registerForm1(context),
+          child: FormBuilder(
+            key: formKey,
+            child: number == 0 ?
+            registerForm0(context, emailFieldKey, passwordFieldKey, rePasswordFieldKey) :
+            registerForm1(context, formKey, fullNameFieldKey, idFieldKey, classFieldKey, facultyFieldKey),
+          ),
         ),
       )
     );
   }
 
-  Widget registerForm0(BuildContext context) {
+  Widget registerForm0(BuildContext context, Key emailFieldKey, Key passwordFieldKey, Key rePasswordFieldKey) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -55,22 +70,34 @@ class RegisterPage extends StatelessWidget {
             Text(emailString, style: Theme.of(context).textTheme.headlineSmall,),
             SizedBox(height: 0.004 * screenHeight),
             InputField(
+              key: emailFieldKey,
+              name: emailString,
               icon: const Icon(Icons.person),
               hintText: emailString,
+              validator: FormBuilderValidators.compose([
+                FormBuilderValidators.required(),
+                FormBuilderValidators.email(),
+              ]),
             ),
             SizedBox(height: 0.03 * screenHeight,),
             Text(passwordString, style: Theme.of(context).textTheme.headlineSmall,),
             SizedBox(height: 0.004 * screenHeight),
             InputField(
+              key: passwordFieldKey,
+              name: passwordString,
               icon: const Icon(Icons.lock),
               hintText: passwordString,
+              validator: FormBuilderValidators.required(),
             ),
             SizedBox(height: 0.03 * screenHeight,),
             Text(confirmPasswordString, style: Theme.of(context).textTheme.headlineSmall,),
             SizedBox(height: 0.004 * screenHeight),
             InputField(
+              key: rePasswordFieldKey,
+              name: passwordString,
               icon: const Icon(Icons.lock, ),
               hintText: passwordString,
+              validator: FormBuilderValidators.required(),
             ),
             SizedBox(height: 0.11 * screenHeight),
           ],
@@ -102,7 +129,7 @@ class RegisterPage extends StatelessWidget {
     );
   }
 
-  Widget registerForm1(BuildContext context) {
+  Widget registerForm1(BuildContext context, Key formKey, Key fullNameFieldKey, Key idFieldKey, Key classFieldKey, Key faculty,) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -130,15 +157,24 @@ class RegisterPage extends StatelessWidget {
             Text(fullNameString, style: Theme.of(context).textTheme.headlineSmall,),
             SizedBox(height: 0.004 * screenHeight),
             InputField(
+              key: fullNameFieldKey,
+              name: fullNameString,
               icon: const Icon(Icons.person),
               hintText: fullNameString,
+              validator: FormBuilderValidators.required(),
             ),
             SizedBox(height: 0.03 * screenHeight,),
             Text(studentIdString, style: Theme.of(context).textTheme.headlineSmall,),
             SizedBox(height: 0.004 * screenHeight),
             InputField(
+              key: idFieldKey,
+              name: studentIdString,
               icon: const Icon(Icons.credit_card),
               hintText: studentIdString,
+              validator: FormBuilderValidators.compose([
+                FormBuilderValidators.required(),
+                FormBuilderValidators.numeric(),
+              ]),
             ),
             SizedBox(height: 0.03 * screenHeight,),
             Text(classString, style: Theme.of(context).textTheme.headlineSmall,),
@@ -164,6 +200,9 @@ class RegisterPage extends StatelessWidget {
           width: 0.58 * screenWidth,
           height: 0.056 * screenHeight,
           text: signUpString,
+          onPressed: () {
+            //todo: form key validate
+          },
         ),
         SizedBox(height: 0.01 * screenHeight),
         InkWell(

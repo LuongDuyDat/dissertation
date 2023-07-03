@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:learning_intern_support_system/component/dropdown_field.dart';
 import 'package:learning_intern_support_system/component/input_field.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
@@ -12,6 +14,10 @@ class EditProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormBuilderState>();
+    final fullNameFieldKey = GlobalKey<FormBuilderFieldState>();
+    final emailFieldKey = GlobalKey<FormBuilderFieldState>();
+    final dateOfBirthFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -24,7 +30,11 @@ class EditProfilePage extends StatelessWidget {
         title: Text(editProfileString),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              if (formKey.currentState!.validate()) {
+
+              }
+            },
             icon: const Icon(Icons.save_alt),
           ),
           SizedBox(width: 0.03 * screenWidth,),
@@ -58,53 +68,71 @@ class EditProfilePage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 0.0475 * screenHeight,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(fullNameString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                  EditInputField(
-                    obscure: false,
-                    style: Theme.of(context).textTheme.headlineMedium!,
-                    initialText: 'Luong Duy Dat',
-                  ),
-                  SizedBox(height: 0.028 * screenHeight),
-                  Text(emailString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                  EditInputField(
-                    obscure: false,
-                    style: Theme.of(context).textTheme.headlineMedium!,
-                    initialText: '19020039@vnu.edu.vn',
-                    suffixIcon: Icon(Icons.verified_user, size: 0.025 * screenHeight, color: Colors.green,),
-                  ),
-                  SizedBox(height: 0.028 * screenHeight),
-                  Text(facultyString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                  DropDownField(
-                    dropdownString: facultyDropDownString,
-                    hintText: facultyString,
-                    inputBorder: const UnderlineInputBorder(),
-                    hintTextStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(color: hintLightText2),
-                    textStyle: Theme.of(context).textTheme.headlineMedium,
-                    iconSize: 0.05 * screenHeight,
-                  ),
-                  SizedBox(height: 0.028 * screenHeight),
-                  Text(classString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                  DropDownField(
-                    dropdownString: classDropDownString,
-                    hintText: classString,
-                    inputBorder: const UnderlineInputBorder(),
-                    hintTextStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(color: hintLightText2),
-                    textStyle: Theme.of(context).textTheme.headlineMedium,
-                    iconSize: 0.05 * screenHeight,
-                  ),
-                  SizedBox(height: 0.028 * screenHeight),
-                  Text(dateOfBirthString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                  EditInputField(
-                    obscure: false,
-                    style: Theme.of(context).textTheme.headlineMedium!,
-                    initialText: '11/10/2001',
-                    suffixIcon: Icon(Icons.calendar_month, size: 0.025 * screenHeight, color: Theme.of(context).primaryColor,),
-                  ),
-                ],
-              )
+              FormBuilder(
+                key: formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(fullNameString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+                    EditInputField(
+                      key: fullNameFieldKey,
+                      name: fullNameString,
+                      obscure: false,
+                      style: Theme.of(context).textTheme.headlineMedium!,
+                      initialText: 'Luong Duy Dat',
+                      validator: FormBuilderValidators.required(),
+                    ),
+                    SizedBox(height: 0.028 * screenHeight),
+                    Text(emailString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+                    EditInputField(
+                      key: emailFieldKey,
+                      name: emailString,
+                      obscure: false,
+                      style: Theme.of(context).textTheme.headlineMedium!,
+                      initialText: '19020039@vnu.edu.vn',
+                      suffixIcon: Icon(Icons.verified_user, size: 0.025 * screenHeight, color: Colors.green,),
+                      validator: FormBuilderValidators.compose([
+                        FormBuilderValidators.required(),
+                        FormBuilderValidators.email(),
+                      ]),
+                    ),
+                    SizedBox(height: 0.028 * screenHeight),
+                    Text(facultyString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+                    DropDownField(
+                      dropdownString: facultyDropDownString,
+                      hintText: facultyString,
+                      inputBorder: const UnderlineInputBorder(),
+                      hintTextStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(color: hintLightText2),
+                      textStyle: Theme.of(context).textTheme.headlineMedium,
+                      iconSize: 0.05 * screenHeight,
+                    ),
+                    SizedBox(height: 0.028 * screenHeight),
+                    Text(classString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+                    DropDownField(
+                      dropdownString: classDropDownString,
+                      hintText: classString,
+                      inputBorder: const UnderlineInputBorder(),
+                      hintTextStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(color: hintLightText2),
+                      textStyle: Theme.of(context).textTheme.headlineMedium,
+                      iconSize: 0.05 * screenHeight,
+                    ),
+                    SizedBox(height: 0.028 * screenHeight),
+                    Text(dateOfBirthString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+                    EditInputField(
+                      key: dateOfBirthFieldKey,
+                      name: dateOfBirthString,
+                      obscure: false,
+                      style: Theme.of(context).textTheme.headlineMedium!,
+                      initialText: '11/10/2001',
+                      suffixIcon: Icon(Icons.calendar_month, size: 0.025 * screenHeight, color: Theme.of(context).primaryColor,),
+                      validator: FormBuilderValidators.compose([
+                        FormBuilderValidators.required(),
+                        FormBuilderValidators.dateString(),
+                      ]),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
