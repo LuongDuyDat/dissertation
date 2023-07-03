@@ -18,6 +18,11 @@ class AddClassPage extends StatelessWidget {
     final formKey = GlobalKey<FormBuilderState>();
     final lecturerFieldKey = GlobalKey<FormBuilderFieldState>();
     final locationFieldKey = GlobalKey<FormBuilderFieldState>();
+    final categoryFieldKey = GlobalKey<FormBuilderFieldState>();
+    final fromFieldKey = GlobalKey<FormBuilderFieldState>();
+    final toFieldKey = GlobalKey<FormBuilderFieldState>();
+    final repeatedFieldKey = GlobalKey<FormBuilderFieldState>();
+    final repeated2FieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -32,116 +37,131 @@ class AddClassPage extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 0.035 * screenHeight, left: 0.056 * screenWidth, right: 0.056 * screenWidth),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(categoryString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-            SizedBox(
-              height: 0.06 * screenHeight,
-              child: DropDownField(
-                icon: Icon(Icons.class_, size: 0.03 * screenHeight,),
-                dropdownString: classTypeDropDownString,
-                hintText: categoryString,
-                inputBorder: const UnderlineInputBorder(),
-                hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
-                textStyle: Theme.of(context).textTheme.bodyLarge,
-                iconSize: 0.05 * screenHeight,
+        child: FormBuilder(
+          key: formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(categoryString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+              SizedBox(
+                height: 0.06 * screenHeight,
+                child: DropDownField(
+                  key: categoryFieldKey,
+                  name: categoryString,
+                  icon: Icon(Icons.class_, size: 0.03 * screenHeight,),
+                  dropdownString: classTypeDropDownString,
+                  hintText: categoryString,
+                  inputBorder: const UnderlineInputBorder(),
+                  hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
+                  textStyle: Theme.of(context).textTheme.bodyLarge,
+                  iconSize: 0.05 * screenHeight,
+                  validator: FormBuilderValidators.required(),
+                ),
               ),
-            ),
-            SizedBox(height: 0.0324 * screenHeight,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(fromString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                    SizedBox(
-                      height: 0.06 * screenHeight,
-                      width: 0.418 * screenWidth,
+              SizedBox(height: 0.0324 * screenHeight,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(fromString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+                      SizedBox(
+                        height: 0.06 * screenHeight,
+                        width: 0.418 * screenWidth,
+                        //todo: time picker
+                        child: DropDownField(
+                          key: fromFieldKey,
+                          name: fromString,
+                          icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
+                          dropdownString: categoryDropDownString,
+                          hintText: fromString,
+                          inputBorder: const UnderlineInputBorder(),
+                          hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
+                          textStyle: Theme.of(context).textTheme.bodyLarge,
+                          iconSize: 0.05 * screenHeight,
+                          validator: FormBuilderValidators.required(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(toString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
                       //todo: time picker
-                      child: DropDownField(
-                        icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
-                        dropdownString: categoryDropDownString,
-                        hintText: fromString,
-                        inputBorder: const UnderlineInputBorder(),
-                        hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
-                        textStyle: Theme.of(context).textTheme.bodyLarge,
-                        iconSize: 0.05 * screenHeight,
+                      SizedBox(
+                        height: 0.06 * screenHeight,
+                        width: 0.418 * screenWidth,
+                        child: DropDownField(
+                          key: toFieldKey,
+                          name: toString,
+                          icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
+                          dropdownString: categoryDropDownString,
+                          hintText: toString,
+                          inputBorder: const UnderlineInputBorder(),
+                          hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
+                          textStyle: Theme.of(context).textTheme.bodyLarge,
+                          iconSize: 0.05 * screenHeight,
+                          validator: FormBuilderValidators.required(),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(toString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                    //todo: time picker
-                    SizedBox(
-                      height: 0.06 * screenHeight,
-                      width: 0.418 * screenWidth,
-                      child: DropDownField(
-                        icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
-                        dropdownString: categoryDropDownString,
-                        hintText: toString,
-                        inputBorder: const UnderlineInputBorder(),
-                        hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
-                        textStyle: Theme.of(context).textTheme.bodyLarge,
-                        iconSize: 0.05 * screenHeight,
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 0.0324 * screenHeight,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(repeatString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
+                      SizedBox(
+                        height: 0.06 * screenHeight,
+                        width: 0.42 * screenWidth,
+                        child: DropDownField(
+                          key: repeatedFieldKey,
+                          name: repeatString,
+                          icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
+                          dropdownString: repeatClassDropDownString,
+                          hintText: repeatString,
+                          inputBorder: const UnderlineInputBorder(),
+                          hintTextStyle: Theme.of(context).textTheme.titleMedium!.copyWith(color: hintLightText2),
+                          textStyle: Theme.of(context).textTheme.bodyMedium,
+                          iconSize: 0.05 * screenHeight,
+                          validator: FormBuilderValidators.required(),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: 0.0324 * screenHeight,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(repeatString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
-                    SizedBox(
-                      height: 0.06 * screenHeight,
-                      width: 0.42 * screenWidth,
-                      child: DropDownField(
-                        icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
-                        dropdownString: repeatClassDropDownString,
-                        hintText: repeatString,
-                        inputBorder: const UnderlineInputBorder(),
-                        hintTextStyle: Theme.of(context).textTheme.titleMedium!.copyWith(color: hintLightText2),
-                        textStyle: Theme.of(context).textTheme.bodyMedium,
-                        iconSize: 0.05 * screenHeight,
+                    ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 0.06 * screenHeight,
+                        width: 0.418 * screenWidth,
+                        child: DropDownField(
+                          key: repeated2FieldKey,
+                          name: '${repeatString}2',
+                          icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
+                          dropdownString: categoryDropDownString,
+                          hintText: toString,
+                          inputBorder: const UnderlineInputBorder(),
+                          hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
+                          textStyle: Theme.of(context).textTheme.bodyLarge,
+                          iconSize: 0.05 * screenHeight,
+                          validator: FormBuilderValidators.required(),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 0.06 * screenHeight,
-                      width: 0.418 * screenWidth,
-                      child: DropDownField(
-                        icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
-                        dropdownString: categoryDropDownString,
-                        hintText: toString,
-                        inputBorder: const UnderlineInputBorder(),
-                        hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
-                        textStyle: Theme.of(context).textTheme.bodyLarge,
-                        iconSize: 0.05 * screenHeight,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: 0.0324 * screenHeight,),
-            FormBuilder(
-              key: formKey,
-              child: Column(
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 0.0324 * screenHeight,),
+              Column(
                 children: [
                   Text(lecturerString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
                   SizedBox(
@@ -191,9 +211,9 @@ class AddClassPage extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+        )
       ),
     );
   }

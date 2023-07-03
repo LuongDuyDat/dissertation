@@ -18,6 +18,8 @@ class EditProfilePage extends StatelessWidget {
     final fullNameFieldKey = GlobalKey<FormBuilderFieldState>();
     final emailFieldKey = GlobalKey<FormBuilderFieldState>();
     final dateOfBirthFieldKey = GlobalKey<FormBuilderFieldState>();
+    final facultyFieldKey = GlobalKey<FormBuilderFieldState>();
+    final classFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -99,22 +101,28 @@ class EditProfilePage extends StatelessWidget {
                     SizedBox(height: 0.028 * screenHeight),
                     Text(facultyString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
                     DropDownField(
+                      key: facultyFieldKey,
+                      name: facultyString,
                       dropdownString: facultyDropDownString,
                       hintText: facultyString,
                       inputBorder: const UnderlineInputBorder(),
                       hintTextStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(color: hintLightText2),
                       textStyle: Theme.of(context).textTheme.headlineMedium,
                       iconSize: 0.05 * screenHeight,
+                      validator: FormBuilderValidators.required(),
                     ),
                     SizedBox(height: 0.028 * screenHeight),
                     Text(classString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
                     DropDownField(
+                      key: classFieldKey,
+                      name: classString,
                       dropdownString: classDropDownString,
                       hintText: classString,
                       inputBorder: const UnderlineInputBorder(),
                       hintTextStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(color: hintLightText2),
                       textStyle: Theme.of(context).textTheme.headlineMedium,
                       iconSize: 0.05 * screenHeight,
+                      validator: FormBuilderValidators.required(),
                     ),
                     SizedBox(height: 0.028 * screenHeight),
                     Text(dateOfBirthString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),

@@ -19,6 +19,9 @@ class TimetableAddPage extends StatelessWidget {
     final titleFieldKey = GlobalKey<FormBuilderFieldState>();
     final lecturerFieldKey = GlobalKey<FormBuilderFieldState>();
     final locationFieldKey = GlobalKey<FormBuilderFieldState>();
+    final categoryFieldKey = GlobalKey<FormBuilderFieldState>();
+    final fromFieldKey = GlobalKey<FormBuilderFieldState>();
+    final toFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -41,6 +44,8 @@ class TimetableAddPage extends StatelessWidget {
               SizedBox(
                 height: 0.06 * screenHeight,
                 child: DropDownField(
+                  key: categoryFieldKey,
+                  name: categoryString,
                   icon: Icon(Icons.school, size: 0.03 * screenHeight,),
                   dropdownString: categoryDropDownString,
                   hintText: categoryString,
@@ -48,6 +53,7 @@ class TimetableAddPage extends StatelessWidget {
                   hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
                   textStyle: Theme.of(context).textTheme.bodyLarge,
                   iconSize: 0.05 * screenHeight,
+                  validator: FormBuilderValidators.required(),
                 ),
               ),
               SizedBox(height: 0.0324 * screenHeight,),
@@ -79,6 +85,8 @@ class TimetableAddPage extends StatelessWidget {
                         width: 0.418 * screenWidth,
                         //todo: time picker
                         child: DropDownField(
+                          key: fromFieldKey,
+                          name: fromString,
                           icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
                           dropdownString: categoryDropDownString,
                           hintText: fromString,
@@ -86,6 +94,7 @@ class TimetableAddPage extends StatelessWidget {
                           hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
                           textStyle: Theme.of(context).textTheme.bodyLarge,
                           iconSize: 0.05 * screenHeight,
+                          validator: FormBuilderValidators.required(),
                         ),
                       ),
                     ],
@@ -99,6 +108,8 @@ class TimetableAddPage extends StatelessWidget {
                         height: 0.06 * screenHeight,
                         width: 0.418 * screenWidth,
                         child: DropDownField(
+                          key: toFieldKey,
+                          name: toString,
                           icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
                           dropdownString: categoryDropDownString,
                           hintText: toString,
@@ -106,6 +117,7 @@ class TimetableAddPage extends StatelessWidget {
                           hintTextStyle: Theme.of(context).textTheme.titleLarge!.copyWith(color: hintLightText2),
                           textStyle: Theme.of(context).textTheme.bodyLarge,
                           iconSize: 0.05 * screenHeight,
+                          validator: FormBuilderValidators.required(),
                         ),
                       ),
                     ],

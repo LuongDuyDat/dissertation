@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 import '../util/global.dart';
 
-class DropDownField extends StatefulWidget {
+class DropDownField extends StatelessWidget {
   const DropDownField({
-    super.key,
+    required Key key,
     required this.dropdownString,
     required this.hintText,
     this.icon,
@@ -12,7 +13,9 @@ class DropDownField extends StatefulWidget {
     this.hintTextStyle,
     this.textStyle,
     this.iconSize,
-  });
+    required this.name,
+    this.validator,
+  }) : super(key: key);
 
   final List<String> dropdownString;
   final String hintText;
@@ -21,36 +24,34 @@ class DropDownField extends StatefulWidget {
   final TextStyle? hintTextStyle;
   final TextStyle? textStyle;
   final double? iconSize;
-
-  @override
-  State<StatefulWidget> createState() => _DropDownFieldState();
-
-}
-
-class _DropDownFieldState extends State<DropDownField> {
+  final String name;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField<String>(
+    return FormBuilderDropdown<String>(
+      key: key,
+      name: name,
       decoration: InputDecoration(
-        hintText: widget.hintText,
-        hintStyle: widget.hintTextStyle ?? Theme.of(context).textTheme.titleLarge,
-        prefixIcon: widget.icon,
-        border: widget.inputBorder ?? OutlineInputBorder(
+        hintText: hintText,
+        hintStyle: hintTextStyle ?? Theme.of(context).textTheme.titleLarge,
+        prefixIcon: icon,
+        border: inputBorder ?? OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(screenWidth * 0.04)),
         ),
         isDense: true,
       ),
-      iconSize: widget.iconSize ?? 24,
+      iconSize: iconSize ?? 24,
       menuMaxHeight: screenHeight * 0.3,
-      items: widget.dropdownString.map<DropdownMenuItem<String>>((e) {
+      items: dropdownString.map<DropdownMenuItem<String>>((e) {
         return DropdownMenuItem<String>(
           value: e,
           child: Text(e),
         );
       }).toList(),
-      style: widget.textStyle ?? Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.normal),
+      style: textStyle ?? Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.normal),
       onChanged: (e) {},
+      validator: validator,
     );
   }
 
