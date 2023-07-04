@@ -13,6 +13,7 @@ String infoAccountString = lang =='vi' ? 'Thông tin tài khoản' : 'Account In
 String infoPersonalString = lang =='vi' ? 'Thông tin cá nhân' : 'Personal Information';
 String confirmPasswordString = lang == 'vi' ? 'Xác nhận mật khẩu' : 'Confirm Password';
 String nextString = lang == 'vi' ? 'Tiếp' : 'Next';
+String prevString = lang == 'vi' ? 'Trước' : 'Prev';
 String alreadyHaveAccount = lang == 'vi' ? 'Đã có tài khoản?' : 'Already have account?';
 String fullNameString = lang == 'vi' ? 'Họ và Tên' : 'Fullname';
 String studentIdString = lang == 'vi' ? 'Mã sinh viên' : 'Student ID';

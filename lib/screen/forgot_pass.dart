@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:learning_intern_support_system/screen/register.dart';
+import 'package:learning_intern_support_system/screen/register/register.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 import 'package:learning_intern_support_system/util/theme.dart';
@@ -91,7 +91,7 @@ class ForgotPassPage extends StatelessWidget {
                   height: 0.056 * screenHeight,
                   text: signUpString,
                   onPressed: () {
-                    Navigate.pushPage(context, const RegisterPage(number: 0));
+                    Navigate.pushPage(context, const RegisterPage());
                   },
                 ),
               ],

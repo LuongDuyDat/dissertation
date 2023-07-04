@@ -12,16 +12,18 @@ class InputField extends StatelessWidget {
   final Icon? suffixIcon;
   final TextInputFormatter? textInputFormatter;
   final String? type;
-  final Function(String)? onChange;
+  final void Function(String?)? onChange;
   final Function()? onSuffixIconTap;
   final InputBorder? inputBorder;
   final TextStyle? hintTextStyle;
   final TextStyle? textStyle;
   final String name;
   final String? Function(String?)? validator;
+  final String initialValue;
 
   const InputField({
-    required Key key,
+    //required Key key,
+    Key? key,
     required this.name,
     required this.icon,
     required this.hintText,
@@ -34,14 +36,16 @@ class InputField extends StatelessWidget {
     this.hintTextStyle,
     this.textStyle,
     this.validator,
-    this.onSuffixIconTap
+    this.onSuffixIconTap,
+    this.initialValue = '',
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return FormBuilderTextField(
-      key: key,
+      //key: key,
       name: name,
+      initialValue: initialValue,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: hintTextStyle ?? Theme.of(context).textTheme.titleLarge,
@@ -63,6 +67,7 @@ class InputField extends StatelessWidget {
       style: textStyle ?? Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.normal),
       textAlignVertical: TextAlignVertical.center,
       validator: validator,
+      onChanged: onChange,
     );
   }
 }

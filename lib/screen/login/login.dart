@@ -11,7 +11,7 @@ import 'package:learning_intern_support_system/screen/forgot_pass.dart';
 import 'package:learning_intern_support_system/screen/login/bloc/login_bloc.dart';
 import 'package:learning_intern_support_system/screen/login/bloc/login_event.dart';
 import 'package:learning_intern_support_system/screen/login/bloc/login_state.dart';
-import 'package:learning_intern_support_system/screen/register.dart';
+import 'package:learning_intern_support_system/screen/register/register.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
@@ -36,8 +36,6 @@ class LoginView extends StatelessWidget {
   LoginView({super.key,});
 
   final _formKey = GlobalKey<FormBuilderState>();
-  final _emailFieldKey = GlobalKey<FormBuilderFieldState>();
-  final _passwordFieldKey = GlobalKey<FormBuilderFieldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +74,6 @@ class LoginView extends StatelessWidget {
                       Text(emailString, style: Theme.of(context).textTheme.headlineSmall,),
                       SizedBox(height: 0.004 * screenHeight),
                       InputField(
-                        key: _emailFieldKey,
                         name: emailString,
                         icon: const Icon(Icons.person),
                         hintText: emailString,
@@ -84,8 +81,8 @@ class LoginView extends StatelessWidget {
                           FormBuilderValidators.required(),
                           FormBuilderValidators.email(),
                         ]),
-                        onChange: (String text) {
-                          context.read<LoginBloc>().add(LoginEmailChange(email: text));
+                        onChange: (String? text) {
+                          context.read<LoginBloc>().add(LoginEmailChange(email: text ?? ''));
                         },
                       ),
                       SizedBox(height: 0.03 * screenHeight,),
@@ -97,7 +94,6 @@ class LoginView extends StatelessWidget {
                         }),
                         builder: (context, state) {
                           return InputField(
-                            key: _passwordFieldKey,
                             name: passwordString,
                             icon: const Icon(Icons.lock),
                             obscure: !state.showPass,
@@ -107,8 +103,8 @@ class LoginView extends StatelessWidget {
                               FormBuilderValidators.required(),
                               FormBuilderValidators.minLength(6),
                             ]),
-                            onChange: (String text) {
-                              context.read<LoginBloc>().add(LoginEmailChange(email: text));
+                            onChange: (String? text) {
+                              context.read<LoginBloc>().add(LoginEmailChange(email: text ?? ''));
                             },
                             onSuffixIconTap: () {
                               context.read<LoginBloc>().add(const LoginShowPassChange());
@@ -180,22 +176,21 @@ class LoginView extends StatelessWidget {
               SizedBox(height: 0.01 * screenHeight),
               RichText(
                 text: TextSpan(
-                    text: '$notHaveAccountString ',
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      fontWeight: FontWeight.normal,
-                    ),
-                    children: [
-                      TextSpan(
-                          text: registerNowString,
-                          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: primaryLightColor,
-                            decoration: TextDecoration.underline,
-                          ),
-                          recognizer: TapGestureRecognizer()..onTap = () {
-                            Navigate.pushPage(context, const RegisterPage(number: 0));
-                          }
+                  text: '$notHaveAccountString ',
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontWeight: FontWeight.normal,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: registerNowString,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: primaryLightColor,
+                        decoration: TextDecoration.underline,
                       ),
-                    ]
+                      recognizer: TapGestureRecognizer()..onTap = () {
+                        Navigate.pushPage(context, const RegisterPage());
+                        },
+                      ),
+                    ],
                 ),
               ),
             ],
