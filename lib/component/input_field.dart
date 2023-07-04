@@ -13,6 +13,7 @@ class InputField extends StatelessWidget {
   final TextInputFormatter? textInputFormatter;
   final String? type;
   final Function(String)? onChange;
+  final Function()? onSuffixIconTap;
   final InputBorder? inputBorder;
   final TextStyle? hintTextStyle;
   final TextStyle? textStyle;
@@ -33,6 +34,7 @@ class InputField extends StatelessWidget {
     this.hintTextStyle,
     this.textStyle,
     this.validator,
+    this.onSuffixIconTap
   }) : super(key: key);
 
   @override
@@ -47,7 +49,10 @@ class InputField extends StatelessWidget {
         suffixIcon: suffixIcon != null
             ? Padding(
           padding: EdgeInsets.only(left: screenWidth * 0.02, right: 0),
-          child: suffixIcon,
+          child: InkWell(
+            onTap: onSuffixIconTap,
+            child: suffixIcon,
+          ),
         ) : const SizedBox(width: 0, height: 0),
         border: inputBorder ?? OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(screenWidth * 0.04)),

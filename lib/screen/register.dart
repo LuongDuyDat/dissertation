@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:learning_intern_support_system/component/dropdown_field.dart';
-import 'package:learning_intern_support_system/screen/login.dart';
+import 'package:learning_intern_support_system/screen/login/login.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';

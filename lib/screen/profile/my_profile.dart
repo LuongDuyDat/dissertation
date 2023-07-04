@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learning_intern_support_system/screen/login.dart';
+import 'package:learning_intern_support_system/screen/login/login.dart';
 import 'package:learning_intern_support_system/screen/profile/change_password.dart';
 import 'package:learning_intern_support_system/screen/profile/edit_profile.dart';
 import 'package:learning_intern_support_system/screen/profile/my_cv.dart';
