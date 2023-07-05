@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:learning_intern_support_system/component/dropdown_field.dart';
-import 'package:learning_intern_support_system/screen/login/login.dart';
 import 'package:learning_intern_support_system/screen/register/bloc/register_bloc.dart';
 import 'package:learning_intern_support_system/screen/register/bloc/register_event.dart';
 import 'package:learning_intern_support_system/screen/register/bloc/register_state.dart';
@@ -51,7 +50,7 @@ class RegisterView extends StatelessWidget {
           },
           listener: (context, state){
             if (state.registerStatus == RegisterStatus.success) {
-              Navigate.pushPage(context, const LoginPage());
+              Navigate.popAll(context);
             }
             if (state.registerStatus == RegisterStatus.failure) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.error)));
@@ -185,7 +184,7 @@ class RegisterView extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigate.pushPage(context, const LoginPage());
+              Navigate.popAll(context);
             },
           ),
         ],
@@ -330,7 +329,7 @@ class RegisterView extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigate.pushPage(context, const LoginPage());
+              Navigate.popAll(context);
             },
           ),
         ],

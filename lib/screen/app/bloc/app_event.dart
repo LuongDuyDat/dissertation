@@ -9,9 +9,10 @@ class AppEvent extends Equatable {
 
 class AppAuthenticating extends AppEvent {
   const AppAuthenticating();
+}
 
-  @override
-  List<Object?> get props => [];
+class AppUnAuthenticating extends AppEvent {
+  const AppUnAuthenticating();
 }
 
 class AppAuthenticateError extends AppEvent {

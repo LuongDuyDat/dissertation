@@ -7,7 +7,6 @@ import 'package:learning_intern_support_system/component/button.dart';
 import 'package:learning_intern_support_system/component/input_field.dart';
 import 'package:learning_intern_support_system/screen/app/bloc/app_bloc.dart';
 import 'package:learning_intern_support_system/screen/app/bloc/app_event.dart';
-import 'package:learning_intern_support_system/screen/forgot_pass.dart';
 import 'package:learning_intern_support_system/screen/login/bloc/login_bloc.dart';
 import 'package:learning_intern_support_system/screen/login/bloc/login_event.dart';
 import 'package:learning_intern_support_system/screen/login/bloc/login_state.dart';
@@ -126,7 +125,8 @@ class LoginView extends StatelessWidget {
                               ),
                             ),
                             onTap: () {
-                              Navigate.pushPage(context, const ForgotPassPage());
+                              Navigate.popPage(context);
+                              //Navigate.pushPage(context, const ForgotPassPage());
                             },
                           )
                         ],

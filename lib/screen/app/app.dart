@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning_intern_support_system/screen/app/bloc/app_bloc.dart';
 import 'package:learning_intern_support_system/screen/app/bloc/app_state.dart';
-import 'package:learning_intern_support_system/screen/home.dart';
 import 'package:learning_intern_support_system/screen/login/login.dart';
 import 'package:learning_intern_support_system/util/theme.dart';
 
-import 'bloc/app_state.dart';
+import '../persistent_bottom_nav_bar.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
             builder: (context, state) {
               switch (state.appStatus) {
                 case AppStatus.authenticated:
-                  return const HomePage();
+                  return const PersistentNavbar();
                 default:
                   return const LoginPage();
               }

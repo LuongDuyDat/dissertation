@@ -5,6 +5,7 @@ import 'package:learning_intern_support_system/screen/app/bloc/app_state.dart';
 class AppBloc extends Bloc<AppEvent, AppState> {
   AppBloc() : super(const AppState()) {
     on<AppAuthenticating>(_onAuthenticating);
+    on<AppUnAuthenticating>(_onUnAuthenticating);
     on<AppAuthenticateError>(_onAuthenticateError);
   }
 
@@ -14,6 +15,15 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       ) {
     emit(state.copyWith(
       appStatus: () => AppStatus.authenticated,
+    ));
+  }
+
+  void _onUnAuthenticating(
+      AppUnAuthenticating event,
+      Emitter<AppState> emit
+      ) {
+    emit(state.copyWith(
+      appStatus: () => AppStatus.unauthenticated,
     ));
   }
 

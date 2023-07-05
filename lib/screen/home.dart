@@ -9,7 +9,6 @@ import 'package:learning_intern_support_system/screen/intern/internship_register
 import 'package:learning_intern_support_system/screen/intern/partner_list.dart';
 import 'package:learning_intern_support_system/screen/learning_process/learning_process_statistic.dart';
 import 'package:learning_intern_support_system/screen/post/company_post.dart';
-import 'package:learning_intern_support_system/screen/search/search.dart';
 import 'package:learning_intern_support_system/screen/training_program/training_program.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
@@ -40,7 +39,8 @@ class HomePage extends StatelessWidget {
                   left: 0.87 * screenWidth,
                   child: IconButton(
                     onPressed: () {
-                      Navigate.pushNewScreen(context, const SearchPage(), true);
+                      Navigate.popPage(context);
+                      //Navigate.pushNewScreen(context, const SearchPage(), true);
                     },
                     icon: Icon(Icons.search, color: backgroundLightColor2, size: 35,),
                   ),
