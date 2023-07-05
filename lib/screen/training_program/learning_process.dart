@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../component/module_tile.dart';
+import '../../model/module_model.dart';
 import '../../util/global.dart';
 import '../../util/strings.dart';
 import '../../util/theme.dart';
-import 'modules.dart';
 
 class LearningProcessPage extends StatelessWidget {
   const LearningProcessPage({super.key});

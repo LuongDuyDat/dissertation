@@ -4,10 +4,10 @@ import 'package:learning_intern_support_system/util/strings.dart';
 import '../../component/list_tile.dart';
 import '../../component/module_tile.dart';
 import '../../component/pie_chart.dart';
+import '../../model/module_model.dart';
 import '../../util/global.dart';
 import '../../util/navigate.dart';
 import '../../util/theme.dart';
-import '../training_program/modules.dart';
 import 'learning_process_statistic.dart';
 
 class OnPlanLearningProcessPage extends StatelessWidget {

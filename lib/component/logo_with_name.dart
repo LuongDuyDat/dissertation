@@ -53,6 +53,8 @@ class TopicWithName extends StatelessWidget {
             name!,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
           ),
         ) : const SizedBox(height: 0, width: 0,),
       ],

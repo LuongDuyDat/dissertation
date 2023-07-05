@@ -4,11 +4,11 @@ import 'package:learning_intern_support_system/component/list_tile.dart';
 import '../../component/module_tile.dart';
 import '../../component/pie_chart.dart';
 import '../../model/chart_statistic.dart';
+import '../../model/module_model.dart';
 import '../../util/global.dart';
 import '../../util/navigate.dart';
 import '../../util/strings.dart';
 import '../../util/theme.dart';
-import '../training_program/modules.dart';
 
 class DetailLearningProcess extends StatelessWidget {
   const DetailLearningProcess({super.key, required this.title, required this.chartStatistic});

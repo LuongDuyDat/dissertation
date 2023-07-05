@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 
 import '../../component/module_tile.dart';
+import '../../model/module_model.dart';
 import '../../util/global.dart';
 import '../../util/navigate.dart';
 import '../../util/theme.dart';
-import '../training_program/modules.dart';
 
 class TeacherProfile extends StatelessWidget {
   const TeacherProfile({super.key, required this.name});
