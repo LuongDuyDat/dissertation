@@ -16,6 +16,8 @@ import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 import 'package:learning_intern_support_system/util/theme.dart';
 
+import '../forget_password/forgot_pass.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -125,8 +127,7 @@ class LoginView extends StatelessWidget {
                               ),
                             ),
                             onTap: () {
-                              Navigate.popPage(context);
-                              //Navigate.pushPage(context, const ForgotPassPage());
+                              Navigate.pushPage(context, const ForgotPassPage());
                             },
                           )
                         ],

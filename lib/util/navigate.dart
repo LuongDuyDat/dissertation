@@ -10,6 +10,10 @@ class Navigate{
     Navigator.popUntil(context, ModalRoute.withName('/'));
   }
 
+  static void pushPageReplacement(BuildContext context, Widget page) {
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => page));
+  }
+
   static void popPage(BuildContext context) {
     Navigator.pop(context);
   }
