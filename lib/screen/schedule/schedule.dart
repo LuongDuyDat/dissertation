@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learning_intern_support_system/screen/schedule/schedule_term.dart';
-import 'package:learning_intern_support_system/screen/schedule/schedule_timetable.dart';
+import 'package:learning_intern_support_system/screen/schedule/schedule_term/schedule_term.dart';
+import 'package:learning_intern_support_system/screen/schedule/schedule_timetable/schedule_timetable.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 
 import '../../util/global.dart';
