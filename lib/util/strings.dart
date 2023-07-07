@@ -178,6 +178,8 @@ String pointString = lang == 'vi' ? 'Điểm' : 'Point';
 String contactString = lang == 'vi'? 'Liên hệ' : 'Contact';
 String postedDateString = lang == 'vi'? 'Ngày đăng' : 'Posted Date';
 String expiredDateString = lang == 'vi'? 'Ngày hết hạn' : 'Expired Date';
+String maleString = lang == 'vi' ? 'Nam' : 'Male';
+String femaleString = lang == 'vi' ? 'Nữ' : 'Female';
 
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];

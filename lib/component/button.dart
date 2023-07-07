@@ -26,3 +26,34 @@ class Button extends StatelessWidget {
     );
   }
 }
+
+class Button2 extends StatelessWidget {
+  const Button2({super.key, required this.text, this.onPressed, required this.style, required this.height,});
+
+  final double height;
+  final String text;
+  final Function()? onPressed;
+  final TextStyle? style;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        height: height,
+        decoration: BoxDecoration(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(text, style: style, textAlign: TextAlign.center,),
+          ],
+        ),
+      ),
+    );
+  }
+}

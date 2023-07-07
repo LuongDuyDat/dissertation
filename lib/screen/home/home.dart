@@ -19,7 +19,7 @@ import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 import 'package:learning_intern_support_system/util/theme.dart';
 
-import '../search/search.dart';
+import '../search/view/search.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
