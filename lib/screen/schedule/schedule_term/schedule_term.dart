@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_term/bloc/schedule_term_bloc.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_term/bloc/schedule_term_event.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_term/bloc/schedule_term_state.dart';
-import 'package:learning_intern_support_system/screen/schedule/schedule_term_add.dart';
+import 'package:learning_intern_support_system/screen/schedule/schedule_term_add/schedule_term_add.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_term_detail/term_detail.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
 

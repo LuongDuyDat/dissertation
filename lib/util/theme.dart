@@ -152,4 +152,12 @@ final appThemeLight = ThemeData(
     textColor: textLightColor,
     selectedColor: secondaryLightColor,
   ),
+
+  timePickerTheme: TimePickerThemeData(
+    helpTextStyle: TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w700,
+      color: hintLightText2,
+    ),
+  ),
 );

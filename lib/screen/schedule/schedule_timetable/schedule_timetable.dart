@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_timetable/bloc/schedule_timetable_bloc.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_timetable/bloc/schedule_timetable_event.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_timetable/bloc/schedule_timetable_state.dart';
-import 'package:learning_intern_support_system/screen/schedule/timetable_add.dart';
+import 'package:learning_intern_support_system/screen/schedule/timetable_add/timetable_add.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
