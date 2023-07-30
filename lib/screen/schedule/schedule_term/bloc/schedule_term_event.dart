@@ -10,3 +10,12 @@ class ScheduleTermEvent extends Equatable {
 class ScheduleTermLoadTerm extends ScheduleTermEvent {
   const ScheduleTermLoadTerm();
 }
+
+class ScheduleTermDelete extends ScheduleTermEvent {
+  const ScheduleTermDelete({required this.index,});
+
+  final int index;
+
+  @override
+  List<Object?> get props => [index];
+}

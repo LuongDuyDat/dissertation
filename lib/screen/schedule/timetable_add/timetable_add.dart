@@ -188,41 +188,46 @@ class TimetableAddView extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 0.0648 * screenHeight,),
-                  state.submitStatus == TimetableAddStatus.loading ?
-                  Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius: const BorderRadius.all(Radius.circular(15)),
-                      ),
-                      height: 0.056 * screenHeight,
-                      width: 0.58 * screenWidth,
-                      child: Center(
-                        child: SizedBox(
-                          width: 0.045 * screenHeight,
-                          height: 0.045 * screenHeight,
-                          child: const Center(
-                            child: CircularProgressIndicator(color: Colors.white,),
+                  BlocBuilder<TimetableAddBloc, TimetableAddState>(
+                    builder: (context, state) {
+                      if (state.submitStatus == TimetableAddStatus.loading) {
+                        return Align(
+                          alignment: Alignment.center,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).primaryColor,
+                              borderRadius: const BorderRadius.all(Radius.circular(15)),
+                            ),
+                            height: 0.056 * screenHeight,
+                            width: 0.58 * screenWidth,
+                            child: Center(
+                              child: SizedBox(
+                                width: 0.045 * screenHeight,
+                                height: 0.045 * screenHeight,
+                                child: const Center(
+                                  child: CircularProgressIndicator(color: Colors.white,),
+                                ),
+                              ),
+                            ),
                           ),
+                        );
+                      }
+                      return Align(
+                        alignment: Alignment.center,
+                        child: Button(
+                          type: 0,
+                          width: 0.58 * screenWidth,
+                          height: 0.056 * screenHeight,
+                          text: addString,
+                          onPressed: () {
+                            if (formKey.currentState!.validate() && state.from != null && state.to != null) {
+                              context.read<TimetableAddBloc>().add(const TimeTableAddSubmit());
+                            }
+                          },
                         ),
-                      ),
-                    ),
-                  ) :
-                  Align(
-                    alignment: Alignment.center,
-                    child: Button(
-                      type: 0,
-                      width: 0.58 * screenWidth,
-                      height: 0.056 * screenHeight,
-                      text: addString,
-                      onPressed: () {
-                        if (formKey.currentState!.validate() && state.from != null && state.to != null) {
-                          context.read<TimetableAddBloc>().add(const TimeTableAddSubmit());
-                        }
-                      },
-                    ),
-                  )
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

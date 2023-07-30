@@ -7,6 +7,7 @@ class ScheduleTermBloc extends Bloc<ScheduleTermEvent, ScheduleTermState> {
   ScheduleTermBloc() :
       super(const ScheduleTermState()) {
     on<ScheduleTermLoadTerm>(_onLoadTerm);
+    on<ScheduleTermDelete>(_onDelete);
   }
 
   void _onLoadTerm(
@@ -20,6 +21,17 @@ class ScheduleTermBloc extends Bloc<ScheduleTermEvent, ScheduleTermState> {
     emit(state.copyWith(
       termStatus: () => ScheduleTermStatus.success,
       termList: () => termListString,
+    ));
+  }
+
+  void _onDelete(
+      ScheduleTermDelete event,
+      Emitter<ScheduleTermState> emit,
+      ) {
+    List<String> tempList = List.from(state.termList);
+    tempList.removeAt(event.index);
+    emit(state.copyWith(
+      termList: () => tempList,
     ));
   }
 }

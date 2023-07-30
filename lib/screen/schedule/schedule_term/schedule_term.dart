@@ -4,7 +4,7 @@ import 'package:learning_intern_support_system/screen/schedule/schedule_term/blo
 import 'package:learning_intern_support_system/screen/schedule/schedule_term/bloc/schedule_term_event.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_term/bloc/schedule_term_state.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_term_add/schedule_term_add.dart';
-import 'package:learning_intern_support_system/screen/schedule/schedule_term_detail/term_detail.dart';
+import 'package:learning_intern_support_system/screen/schedule/schedule_term_detail/term_detail/term_detail.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
 
 import '../../../util/global.dart';
@@ -92,7 +92,13 @@ class ScheduleTermView extends StatelessWidget {
                             ],
                           ),
                           onTap: () {
-                            Navigate.pushNewScreen(context, TermDetailPage(termName: state.termList.elementAt(index),), true);
+                            Navigate.pushNewScreen(
+                              context,
+                              TermDetailPage(termName: state.termList.elementAt(index), onDeleteTerm: () {
+                                context.read<ScheduleTermBloc>().add(ScheduleTermDelete(index: index));
+                              },),
+                              true,
+                            );
                           },
                         );
                       },

@@ -91,6 +91,7 @@ String classesString = lang == 'vi' ? 'Lớp học' : 'Classes';
 String lectureString = lang == 'vi' ? 'Lý thuyết' : 'Lecture';
 String practicalString = lang == 'vi' ? 'Thực hành' : 'Practical';
 String addClassString = lang == 'vi' ? 'Thêm lớp học' : 'Add Class';
+String editClassString = lang == 'vi' ? 'Chỉnh sửa lớp học' : 'Edit Class';
 String repeatString = lang == 'vi' ? 'Lặp lại' : 'Repeat';
 String neverString = lang == 'vi' ? 'Không' : 'Never';
 String eachWeekString = lang == 'vi' ? 'Mỗi tuần' : 'Each Week';
@@ -180,19 +181,33 @@ String postedDateString = lang == 'vi'? 'Ngày đăng' : 'Posted Date';
 String expiredDateString = lang == 'vi'? 'Ngày hết hạn' : 'Expired Date';
 String maleString = lang == 'vi' ? 'Nam' : 'Male';
 String femaleString = lang == 'vi' ? 'Nữ' : 'Female';
-
+String deleteTermString = lang == 'vi' ? 'Xoá kỳ học' : 'Delete Term';
+String finishString = lang == 'vi' ? 'Xong' : 'Finish';
+String deleteString = lang == 'vi' ? 'Xoá' : 'Delete';
+String repeatNumberString = lang == 'vi' ? 'Lặp lại (Số)' : 'Repeat (Number)';
+String everyString = lang == 'vi' ? 'Mỗi' : 'Every';
+String weekDaysString = lang == 'vi' ? 'Thứ' : 'Weekdays';
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];
 List<String> classTypeDropDownString = [lectureString, practicalString];
-List<String> repeatClassDropDownString = [neverString, eachWeekString, each2WeeksString, eachMonthString, each2MonthsString];
+List<String> numberRepeatDropDownString = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
 List<String> categoryDropDownString = [classString2, assignmentString];
 List<String> daysOfWeek = [
-  lang == 'vi' ? 'Thứ hai' : 'Monday',
-  lang == 'vi' ? 'Thứ ba' : 'Tuesday',
-  lang == 'vi' ? 'Thứ tư' : 'Wednesday',
-  lang == 'vi' ? 'Thứ năm' : 'Thursday',
-  lang == 'vi' ? 'Thứ sáu' : 'Friday',
-  lang == 'vi' ? 'Thứ bảy' : 'Saturday',
-  lang == 'vi' ? 'Chủ nhật' : 'Sunday',
+  lang == 'vi' ? 'T2' : 'Mon',
+  lang == 'vi' ? 'T3' : 'Tue',
+  lang == 'vi' ? 'T4' : 'Wed',
+  lang == 'vi' ? 'T5' : 'Thu',
+  lang == 'vi' ? 'T6' : 'Fri',
+  lang == 'vi' ? 'T7' : 'Sat',
+  lang == 'vi' ? 'CN' : 'Sun',
+];
+List<String> unitRepeatDropDownString = [
+  lang == 'vi' ? 'tuần' : 'weeks',
+  lang == 'vi' ? 'ngày' : 'days',
+  lang == 'vi' ? 'ngày làm việc' : 'working days',
+  lang == 'vi' ? 'ngày lẻ' : 'odd days',
+  lang == 'vi' ? 'ngày chẵn' : 'even days',
+  lang == 'vi' ? 'ngày làm việc lẻ' : 'odd working days',
+  lang == 'vi' ? 'ngày làm việc chẵn' : 'even working days',
 ];

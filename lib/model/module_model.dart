@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 class Module extends Equatable{
   const Module({required this.moduleId, required this.moduleName, required this.creditNumber, required this.faculty, this.type,});
@@ -18,6 +19,73 @@ class Module extends Equatable{
     faculty,
   ];
 }
+
+class ModuleSchedule extends Equatable {
+  const ModuleSchedule({
+    required this.type,
+    required this.startTime,
+    required this.endTime,
+    required this.repeat,
+    required this.location,
+  });
+
+  // type = 0: Ly thuyet, type = 1: thuc hanh
+  final String type;
+  final TimeOfDay startTime;
+  final TimeOfDay endTime;
+  final String repeat;
+  final String location;
+
+  @override
+  List<Object?> get props => [
+    type,
+    startTime,
+    endTime,
+    repeat,
+    location,
+  ];
+}
+
+class ModuleInTerm extends Equatable {
+  const ModuleInTerm({required this.moduleName, required this.color,});
+
+  final String moduleName;
+  final Color color;
+
+  @override
+  List<Object?> get props => [moduleName, color,];
+}
+
+List<ModuleInTerm> moduleInTermList = [
+  const ModuleInTerm(
+    moduleName: 'Bóng bàn',
+    color: Colors.blue,
+  ),
+  const ModuleInTerm(
+    moduleName: 'Cấu Trúc Dữ Liệu và Giải Thuật',
+    color: Colors.yellow,
+  ),
+  const ModuleInTerm(
+    moduleName: 'CNXHKH',
+    color: Colors.purple,
+  ),
+  const ModuleInTerm(
+    moduleName: 'Kiến trúc máy tính',
+    color: Colors.red,
+  ),
+  const ModuleInTerm(
+    moduleName: 'Lập trình hướng đối tượng',
+    color: Colors.orangeAccent,
+  ),
+  const ModuleInTerm(
+    moduleName: 'Nguyên Lý Marketing',
+    color: Colors.yellow,
+  ),
+  const ModuleInTerm(
+    moduleName: 'Xác suốt thống kê',
+    color: Colors.green,
+  ),
+];
 
 List<Module> moduleList = [
   const Module(
