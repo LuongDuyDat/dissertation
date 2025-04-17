@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:learning_intern_support_system/component/time_picker.dart';
-import 'package:learning_intern_support_system/model/class_schedule_model.dart';
+import 'package:learning_intern_support_system/domain/entities/class_schedule_model.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_term_detail/module_detail/bloc/module_detail_bloc.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_term_detail/module_detail/bloc/module_detail_event.dart';
 import 'package:learning_intern_support_system/util/strings.dart';

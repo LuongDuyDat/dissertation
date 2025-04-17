@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:learning_intern_support_system/model/class_schedule_model.dart';
+import 'package:learning_intern_support_system/domain/entities/class_schedule_model.dart';
 
 enum ModuleDetailStatus {initial, loading, success, failure}
 

@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:learning_intern_support_system/model/module_model.dart';
-import 'package:learning_intern_support_system/model/post_model.dart';
+import 'package:learning_intern_support_system/domain/entities/module_model.dart';
+import 'package:learning_intern_support_system/domain/entities/post_model.dart';
 import 'package:learning_intern_support_system/screen/home/bloc/home_event.dart';
 import 'package:learning_intern_support_system/screen/home/bloc/home_state.dart';
 
-import '../../../model/training_program_model.dart';
+import '../../../domain/entities/training_program_model.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState>{
   HomeBloc() :

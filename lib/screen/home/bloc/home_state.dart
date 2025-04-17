@@ -1,9 +1,9 @@
 import 'dart:core';
 
 import 'package:equatable/equatable.dart';
-import 'package:learning_intern_support_system/model/module_model.dart';
-import 'package:learning_intern_support_system/model/post_model.dart';
-import 'package:learning_intern_support_system/model/training_program_model.dart';
+import 'package:learning_intern_support_system/domain/entities/module_model.dart';
+import 'package:learning_intern_support_system/domain/entities/post_model.dart';
+import 'package:learning_intern_support_system/domain/entities/training_program_model.dart';
 
 enum TrainingProgramStatus {initial, loading, failure, success}
 enum ModuleStatus {initial, loading, failure, success}

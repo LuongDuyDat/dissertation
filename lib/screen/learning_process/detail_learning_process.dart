@@ -3,8 +3,8 @@ import 'package:learning_intern_support_system/component/list_tile.dart';
 
 import '../../component/module_tile.dart';
 import '../../component/pie_chart.dart';
-import '../../model/chart_statistic.dart';
-import '../../model/module_model.dart';
+import '../../domain/entities/chart_statistic.dart';
+import '../../domain/entities/module_model.dart';
 import '../../util/global.dart';
 import '../../util/navigate.dart';
 import '../../util/strings.dart';

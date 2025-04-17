@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:learning_intern_support_system/model/notification_model.dart';
+import 'package:learning_intern_support_system/domain/entities/notification_model.dart';
 import 'package:learning_intern_support_system/screen/notification/bloc/notification_event.dart';
 import 'package:learning_intern_support_system/screen/notification/bloc/notification_state.dart';
 

@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:learning_intern_support_system/model/schedule_event_model.dart';
+import 'package:learning_intern_support_system/domain/entities/schedule_event_model.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_timetable/bloc/schedule_timetable_event.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_timetable/bloc/schedule_timetable_state.dart';
 

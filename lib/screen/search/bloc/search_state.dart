@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:learning_intern_support_system/model/profile_model.dart';
-import 'package:learning_intern_support_system/model/training_program_model.dart';
+import 'package:learning_intern_support_system/domain/entities/profile_model.dart';
+import 'package:learning_intern_support_system/domain/entities/training_program_model.dart';
 
-import '../../../model/module_model.dart';
+import '../../../domain/entities/module_model.dart';
 
 enum SearchStatus {initial, loading, success, failure}
 

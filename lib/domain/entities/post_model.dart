@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-import '../util/strings.dart';
+import '../../util/strings.dart';
+
 
 class PostModel extends Equatable {
   const PostModel({

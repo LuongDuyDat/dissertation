@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../component/module_tile.dart';
-import '../../model/module_model.dart';
+import '../../domain/entities/module_model.dart';
 import '../../util/global.dart';
 import '../../util/strings.dart';
 import '../../util/theme.dart';

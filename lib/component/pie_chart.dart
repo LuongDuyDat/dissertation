@@ -1,7 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-import '../model/chart_statistic.dart';
+import '../domain/entities/chart_statistic.dart';
 import '../util/global.dart';
 import '../util/theme.dart';
 import 'indicator.dart';

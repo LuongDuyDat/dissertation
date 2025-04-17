@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:learning_intern_support_system/model/profile_model.dart';
+import 'package:learning_intern_support_system/domain/entities/profile_model.dart';
 import 'package:learning_intern_support_system/screen/profile/my_profile/bloc/my_profile_event.dart';
 import 'package:learning_intern_support_system/screen/profile/my_profile/bloc/my_profile_state.dart';
 

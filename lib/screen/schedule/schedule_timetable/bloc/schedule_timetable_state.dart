@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:learning_intern_support_system/model/schedule_event_model.dart';
+import 'package:learning_intern_support_system/domain/entities/schedule_event_model.dart';
 
 enum ScheduleTimeTableStatus {initial, loading, success, failure}
 

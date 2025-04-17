@@ -1,7 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-import '../util/strings.dart';
+import '../../util/strings.dart';
+
 
 class ClassScheduleModel extends Equatable {
   const ClassScheduleModel({

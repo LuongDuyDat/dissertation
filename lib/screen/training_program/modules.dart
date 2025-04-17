@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learning_intern_support_system/component/module_tile.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 
-import '../../model/module_model.dart';
+import '../../domain/entities/module_model.dart';
 import '../../util/global.dart';
 import '../../util/theme.dart';
 

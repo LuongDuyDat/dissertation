@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:learning_intern_support_system/model/chart_statistic.dart';
+import 'package:learning_intern_support_system/domain/entities/chart_statistic.dart';
 import 'package:learning_intern_support_system/screen/learning_process/detail_learning_process.dart';
 import 'package:learning_intern_support_system/screen/learning_process/on_plan.dart';
 import 'package:learning_intern_support_system/util/global.dart';

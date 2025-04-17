@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import '../../../../../model/module_model.dart';
+import '../../../../../domain/entities/module_model.dart';
 
 enum TermDetailStatus {initial, loading, success, failure}
 

@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:learning_intern_support_system/model/class_schedule_model.dart';
+import 'package:learning_intern_support_system/domain/entities/class_schedule_model.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_term_detail/module_detail/bloc/module_detail_event.dart';
 import 'package:learning_intern_support_system/screen/schedule/schedule_term_detail/module_detail/bloc/module_detail_state.dart';
 

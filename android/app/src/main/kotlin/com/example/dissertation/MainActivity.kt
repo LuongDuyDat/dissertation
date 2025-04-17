@@ -1,4 +1,4 @@
-package com.example.learning_intern_support_system
+package com.example.dissertation
 
 import io.flutter.embedding.android.FlutterActivity
 

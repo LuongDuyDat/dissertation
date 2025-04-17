@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:learning_intern_support_system/model/module_model.dart';
-import 'package:learning_intern_support_system/model/profile_model.dart';
-import 'package:learning_intern_support_system/model/training_program_model.dart';
+import 'package:learning_intern_support_system/domain/entities/module_model.dart';
+import 'package:learning_intern_support_system/domain/entities/profile_model.dart';
+import 'package:learning_intern_support_system/domain/entities/training_program_model.dart';
 import 'package:learning_intern_support_system/screen/search/bloc/search_state.dart';
 import 'package:learning_intern_support_system/screen/search/bloc/search_event.dart';
 
