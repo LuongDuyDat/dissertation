@@ -39,11 +39,18 @@ class MyProfileView extends StatelessWidget {
         titleSpacing: 0,
         title: Text(myProfileString),
         actions: [
-          IconButton(
-            onPressed: () {
-              Navigate.pushNewScreen(context, const EditProfilePage(), true);
+          BlocBuilder<MyProfileBloc, MyProfileState>(
+            buildWhen: (previous, current) {
+              return previous.myProfile != current.myProfile;
             },
-            icon: const Icon(Icons.edit),
+            builder: (context, state) {
+              return IconButton(
+                onPressed: () {
+                  Navigate.pushNewScreen(context, EditProfilePage(studentEntity: state.myProfile,), true);
+                },
+                icon: const Icon(Icons.edit),
+              );
+            },
           ),
           SizedBox(width: 0.03 * screenWidth,),
         ],
@@ -102,7 +109,7 @@ class MyProfileView extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    state.myProfile!.studentId,
+                                    state.myProfile!.id,
                                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w800),
                                   ),
                                   SizedBox(height: 0.004 * screenHeight,),
@@ -130,7 +137,7 @@ class MyProfileView extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    state.myProfile!.facultyId,
+                                    "CN1",
                                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w800),
                                   ),
                                   SizedBox(height: 0.004 * screenHeight,),

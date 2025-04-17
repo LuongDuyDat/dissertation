@@ -34,7 +34,7 @@ class DropDownField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FormBuilderDropdown<String>(
-      key: key,
+      //key: key,
       name: name,
       initialValue: initialValue,
       decoration: InputDecoration(

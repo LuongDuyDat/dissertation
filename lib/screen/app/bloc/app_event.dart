@@ -7,6 +7,10 @@ class AppEvent extends Equatable {
   List<Object?> get props => [];
 }
 
+class AppStarting extends AppEvent {
+  const AppStarting();
+}
+
 class AppAuthenticating extends AppEvent {
   const AppAuthenticating();
 }

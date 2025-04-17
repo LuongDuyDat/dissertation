@@ -101,7 +101,7 @@ class EditInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FormBuilderTextField(
-      key: key,
+      //key: key,
       name: name,
       initialValue: initialText,
       decoration: InputDecoration(

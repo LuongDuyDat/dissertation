@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:learning_intern_support_system/domain/entities/profile_model.dart';
+import 'package:learning_intern_support_system/domain/entities/student.dart';
 
 enum MyProfileStatus {initial, loading, success, failure,}
 
@@ -10,12 +10,12 @@ class MyProfileState extends Equatable {
     this.error = '',
   });
 
-  final StudentProfileModel? myProfile;
+  final StudentEntity? myProfile;
   final MyProfileStatus myProfileStatus;
   final String error;
 
   MyProfileState copyWith({
-    StudentProfileModel Function()? myProfile,
+    StudentEntity Function()? myProfile,
     MyProfileStatus Function()? myProfileStatus,
     String Function()? error,
   }) {

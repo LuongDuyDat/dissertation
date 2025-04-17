@@ -58,143 +58,145 @@ class LoginView extends StatelessWidget {
           }
         },
         builder: (context, state) {
-          return Column(
-            children: [
-              SizedBox(height: 0.1 * screenHeight),
-              Center(child: Image.asset('assets/images/logo.png', width: screenWidth * 0.4,),),
-              SizedBox(height: 0.02 * screenHeight,),
-              Text(loginString, style: Theme.of(context).textTheme.displayLarge,),
-              SizedBox(height: 0.06 * screenHeight),
-              FormBuilder(
-                key: _formKey,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 0.056 * screenWidth),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(emailString, style: Theme.of(context).textTheme.headlineSmall,),
-                      SizedBox(height: 0.004 * screenHeight),
-                      InputField(
-                        name: emailString,
-                        icon: const Icon(Icons.person),
-                        hintText: emailString,
-                        validator: FormBuilderValidators.compose([
-                          FormBuilderValidators.required(),
-                          FormBuilderValidators.email(),
-                        ]),
-                        onChange: (String? text) {
-                          context.read<LoginBloc>().add(LoginEmailChange(email: text ?? ''));
-                        },
-                      ),
-                      SizedBox(height: 0.03 * screenHeight,),
-                      Text(passwordString, style: Theme.of(context).textTheme.headlineSmall,),
-                      SizedBox(height: 0.004 * screenHeight),
-                      BlocBuilder<LoginBloc, LoginState>(
-                        buildWhen: ((previous, current) {
-                          return previous.showPass != current.showPass;
-                        }),
-                        builder: (context, state) {
-                          return InputField(
-                            name: passwordString,
-                            icon: const Icon(Icons.lock),
-                            obscure: !state.showPass,
-                            suffixIcon: state.showPass ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility),
-                            hintText: passwordString,
-                            validator: FormBuilderValidators.compose([
-                              FormBuilderValidators.required(),
-                              FormBuilderValidators.minLength(6),
-                            ]),
-                            onChange: (String? text) {
-                              context.read<LoginBloc>().add(LoginEmailChange(email: text ?? ''));
-                            },
-                            onSuffixIconTap: () {
-                              context.read<LoginBloc>().add(const LoginShowPassChange());
-                            },
-                          );
-                        },
-                      ),
-                      SizedBox(height: 0.004 * screenHeight),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          InkWell(
-                            child: Text(
-                              forgetPasswordString,
-                              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                                fontWeight: FontWeight.normal,
-                                color: primaryLightColor,
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
-                            onTap: () {
-                              Navigate.pushPage(context, const ForgotPassPage());
-                            },
-                          )
-                        ],
-                      ),
-                      SizedBox(height: 0.075 * screenHeight),
-                      state.loginStatus == LoginStatus.loading
-                          ? Align(
-                        alignment: Alignment.center,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
-                            borderRadius: const BorderRadius.all(Radius.circular(15)),
-                          ),
-                          width: 0.58 * screenWidth,
-                          height: 0.056 * screenHeight,
-                          child: Center(
-                            child: SizedBox(
-                              width: 0.045 * screenHeight,
-                              height: 0.045 * screenHeight,
-                              child: const Center(
-                                child: CircularProgressIndicator(color: Colors.white,),
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                          : Align(
-                        alignment: Alignment.center,
-                        child: Button(
-                          type: 0,
-                          width: 0.58 * screenWidth,
-                          height: 0.056 * screenHeight,
-                          text: loginString,
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              context.read<LoginBloc>().add(const LoginSubmit());
-                            } else {
-                              context.read<LoginBloc>().add(LoginError(error: _formKey.currentState!.errors.values.elementAt(0)));
-                            }
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: 0.1 * screenHeight),
+                Center(child: Image.asset('assets/images/logo.png', width: screenWidth * 0.4,),),
+                SizedBox(height: 0.02 * screenHeight,),
+                Text(loginString, style: Theme.of(context).textTheme.displayLarge,),
+                SizedBox(height: 0.06 * screenHeight),
+                FormBuilder(
+                  key: _formKey,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 0.056 * screenWidth),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(emailString, style: Theme.of(context).textTheme.headlineSmall,),
+                        SizedBox(height: 0.004 * screenHeight),
+                        InputField(
+                          name: emailString,
+                          icon: const Icon(Icons.person),
+                          hintText: emailString,
+                          validator: FormBuilderValidators.compose([
+                            FormBuilderValidators.required(),
+                            FormBuilderValidators.email(),
+                          ]),
+                          onChange: (String? text) {
+                            context.read<LoginBloc>().add(LoginEmailChange(email: text ?? ''));
                           },
                         ),
-                      )
-                    ],
+                        SizedBox(height: 0.03 * screenHeight,),
+                        Text(passwordString, style: Theme.of(context).textTheme.headlineSmall,),
+                        SizedBox(height: 0.004 * screenHeight),
+                        BlocBuilder<LoginBloc, LoginState>(
+                          buildWhen: ((previous, current) {
+                            return previous.showPass != current.showPass;
+                          }),
+                          builder: (context, state) {
+                            return InputField(
+                              name: passwordString,
+                              icon: const Icon(Icons.lock),
+                              //obscure: !state.showPass,
+                              suffixIcon: state.showPass ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility),
+                              hintText: passwordString,
+                              validator: FormBuilderValidators.compose([
+                                FormBuilderValidators.required(),
+                                FormBuilderValidators.minLength(6),
+                              ]),
+                              onChange: (String? text) {
+                                context.read<LoginBloc>().add(LoginPasswordChange(password: text ?? ''));
+                              },
+                              onSuffixIconTap: () {
+                                context.read<LoginBloc>().add(const LoginShowPassChange());
+                              },
+                            );
+                          },
+                        ),
+                        SizedBox(height: 0.004 * screenHeight),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            InkWell(
+                              child: Text(
+                                forgetPasswordString,
+                                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                  fontWeight: FontWeight.normal,
+                                  color: primaryLightColor,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                              onTap: () {
+                                Navigate.pushPage(context, const ForgotPassPage());
+                              },
+                            )
+                          ],
+                        ),
+                        SizedBox(height: 0.075 * screenHeight),
+                        state.loginStatus == LoginStatus.loading
+                            ? Align(
+                          alignment: Alignment.center,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).primaryColor,
+                              borderRadius: const BorderRadius.all(Radius.circular(15)),
+                            ),
+                            width: 0.58 * screenWidth,
+                            height: 0.056 * screenHeight,
+                            child: Center(
+                              child: SizedBox(
+                                width: 0.045 * screenHeight,
+                                height: 0.045 * screenHeight,
+                                child: const Center(
+                                  child: CircularProgressIndicator(color: Colors.white,),
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                            : Align(
+                          alignment: Alignment.center,
+                          child: Button(
+                            type: 0,
+                            width: 0.58 * screenWidth,
+                            height: 0.056 * screenHeight,
+                            text: loginString,
+                            onPressed: () {
+                              if (_formKey.currentState!.validate()) {
+                                context.read<LoginBloc>().add(const LoginSubmit());
+                              } else {
+                                context.read<LoginBloc>().add(LoginError(error: _formKey.currentState!.errors.values.elementAt(0)));
+                              }
+                            },
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 0.01 * screenHeight),
-              RichText(
-                text: TextSpan(
-                  text: '$notHaveAccountString ',
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    fontWeight: FontWeight.normal,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: registerNowString,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: primaryLightColor,
-                        decoration: TextDecoration.underline,
-                      ),
-                      recognizer: TapGestureRecognizer()..onTap = () {
-                        Navigate.pushPage(context, const RegisterPage());
+                SizedBox(height: 0.01 * screenHeight),
+                RichText(
+                  text: TextSpan(
+                    text: '$notHaveAccountString ',
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      fontWeight: FontWeight.normal,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: registerNowString,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: primaryLightColor,
+                          decoration: TextDecoration.underline,
+                        ),
+                        recognizer: TapGestureRecognizer()..onTap = () {
+                          Navigate.pushPage(context, const RegisterPage());
                         },
                       ),
                     ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         },
       ),

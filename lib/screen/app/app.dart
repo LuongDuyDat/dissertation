@@ -6,6 +6,7 @@ import 'package:learning_intern_support_system/screen/login/login.dart';
 import 'package:learning_intern_support_system/util/theme.dart';
 
 import '../persistent_bottom_nav_bar.dart';
+import 'bloc/app_event.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => AppBloc()),
+        BlocProvider(create: (_) => AppBloc()..add(const AppStarting())),
       ],
       child: Builder(builder: (context) {
         return MaterialApp(

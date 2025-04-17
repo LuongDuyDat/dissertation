@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:intl/intl.dart';
 import 'package:learning_intern_support_system/component/dropdown_field.dart';
 import 'package:learning_intern_support_system/component/input_field.dart';
+import 'package:learning_intern_support_system/domain/entities/student.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 
@@ -10,7 +12,9 @@ import '../../util/global.dart';
 import '../../util/theme.dart';
 
 class EditProfilePage extends StatelessWidget {
-  const EditProfilePage({super.key});
+  const EditProfilePage({super.key, this.studentEntity,});
+
+  final StudentEntity? studentEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +85,7 @@ class EditProfilePage extends StatelessWidget {
                       name: fullNameString,
                       obscure: false,
                       style: Theme.of(context).textTheme.headlineMedium!,
-                      initialText: 'Luong Duy Dat',
+                      initialText: studentEntity?.name ?? '',
                       validator: FormBuilderValidators.required(),
                     ),
                     SizedBox(height: 0.028 * screenHeight),
@@ -91,7 +95,7 @@ class EditProfilePage extends StatelessWidget {
                       name: emailString,
                       obscure: false,
                       style: Theme.of(context).textTheme.headlineMedium!,
-                      initialText: '19020039@vnu.edu.vn',
+                      initialText: studentEntity?.email ?? '',
                       suffixIcon: Icon(Icons.verified_user, size: 0.025 * screenHeight, color: Colors.green,),
                       validator: FormBuilderValidators.compose([
                         FormBuilderValidators.required(),
@@ -117,7 +121,7 @@ class EditProfilePage extends StatelessWidget {
                       key: classFieldKey,
                       name: classString,
                       dropdownString: classDropDownString,
-                      hintText: classString,
+                      hintText: studentEntity?.classId ?? '',
                       inputBorder: const UnderlineInputBorder(),
                       hintTextStyle: Theme.of(context).textTheme.headlineMedium!.copyWith(color: hintLightText2),
                       textStyle: Theme.of(context).textTheme.headlineMedium,
@@ -131,7 +135,7 @@ class EditProfilePage extends StatelessWidget {
                       name: dateOfBirthString,
                       obscure: false,
                       style: Theme.of(context).textTheme.headlineMedium!,
-                      initialText: '11/10/2001',
+                      initialText: DateFormat('dd/MM/yyyy').format(studentEntity!.birthDay),
                       suffixIcon: Icon(Icons.calendar_month, size: 0.025 * screenHeight, color: Theme.of(context).primaryColor,),
                       validator: FormBuilderValidators.compose([
                         FormBuilderValidators.required(),
