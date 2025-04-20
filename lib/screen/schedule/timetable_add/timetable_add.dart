@@ -33,6 +33,9 @@ class TimetableAddView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormBuilderState>();
+    final moduleFieldKey = GlobalKey<FormBuilderFieldState>();
+    final lecturerFieldKey = GlobalKey<FormBuilderFieldState>();
+    final locationFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -88,6 +91,7 @@ class TimetableAddView extends StatelessWidget {
                   SizedBox(
                     height: 0.06 * screenHeight,
                     child: InputField(
+                      formKey: moduleFieldKey,
                       name: moduleNameString,
                       icon: Icon(Icons.title, size: 0.03 * screenHeight,),
                       hintText: moduleNameString,
@@ -156,6 +160,7 @@ class TimetableAddView extends StatelessWidget {
                   SizedBox(
                     height: 0.06 * screenHeight,
                     child: InputField(
+                      formKey: lecturerFieldKey,
                       name: lecturerString,
                       icon: Icon(Icons.person, size: 0.03 * screenHeight,),
                       hintText: lecturerString,
@@ -174,6 +179,7 @@ class TimetableAddView extends StatelessWidget {
                   SizedBox(
                     height: 0.06 * screenHeight,
                     child: InputField(
+                      formKey: locationFieldKey,
                       name: locationString,
                       icon: Icon(Icons.location_pin, size: 0.03 * screenHeight,),
                       hintText: locationString,

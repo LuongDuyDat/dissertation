@@ -47,7 +47,7 @@ class RegisterExternalCompanyPage extends StatelessWidget {
             children: [
               Text(companyNameString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
               EditInputField(
-                key: companyNameFieldKey,
+                formKey: companyNameFieldKey,
                 name: companyNameString,
                 obscure: false,
                 style: Theme.of(context).textTheme.headlineMedium!,
@@ -57,7 +57,7 @@ class RegisterExternalCompanyPage extends StatelessWidget {
               SizedBox(height: 0.028 * screenHeight),
               Text(emailContactString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
               EditInputField(
-                key: emailContactFieldKey,
+                formKey: emailContactFieldKey,
                 name: emailContactString,
                 obscure: false,
                 style: Theme.of(context).textTheme.headlineMedium!,
@@ -70,7 +70,7 @@ class RegisterExternalCompanyPage extends StatelessWidget {
               SizedBox(height: 0.028 * screenHeight),
               Text(phoneNumberContactString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
               EditInputField(
-                key: phoneNumberContactFieldKey,
+                formKey: phoneNumberContactFieldKey,
                 name: phoneNumberContactString,
                 obscure: false,
                 style: Theme.of(context).textTheme.headlineMedium!,
@@ -83,7 +83,7 @@ class RegisterExternalCompanyPage extends StatelessWidget {
               SizedBox(height: 0.028 * screenHeight),
               Text(websiteString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
               EditInputField(
-                key: websiteFieldKey,
+                formKey: websiteFieldKey,
                 name: websiteString,
                 obscure: false,
                 style: Theme.of(context).textTheme.headlineMedium!,

@@ -81,7 +81,7 @@ class EditProfilePage extends StatelessWidget {
                   children: [
                     Text(fullNameString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
                     EditInputField(
-                      key: fullNameFieldKey,
+                      formKey: fullNameFieldKey,
                       name: fullNameString,
                       obscure: false,
                       style: Theme.of(context).textTheme.headlineMedium!,
@@ -91,7 +91,7 @@ class EditProfilePage extends StatelessWidget {
                     SizedBox(height: 0.028 * screenHeight),
                     Text(emailString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
                     EditInputField(
-                      key: emailFieldKey,
+                      formKey: emailFieldKey,
                       name: emailString,
                       obscure: false,
                       style: Theme.of(context).textTheme.headlineMedium!,
@@ -131,7 +131,7 @@ class EditProfilePage extends StatelessWidget {
                     SizedBox(height: 0.028 * screenHeight),
                     Text(dateOfBirthString, style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: hintLightText),),
                     EditInputField(
-                      key: dateOfBirthFieldKey,
+                      formKey: dateOfBirthFieldKey,
                       name: dateOfBirthString,
                       obscure: false,
                       style: Theme.of(context).textTheme.headlineMedium!,

@@ -4,15 +4,11 @@ enum LoginStatus {initial, loading, success, failure}
 
 class LoginState extends Equatable {
   const LoginState({
-    this.email = '',
-    this.password = '',
     this.error = '',
     this.loginStatus = LoginStatus.initial,
     this.showPass = false,
   });
 
-  final String email;
-  final String password;
   final String error;
   final LoginStatus loginStatus;
   final bool showPass;
@@ -25,8 +21,6 @@ class LoginState extends Equatable {
     bool Function()? showPass,
   }) {
     return LoginState(
-      email: email != null ? email() : this.email,
-      password: password != null ? password() : this.password,
       error: error != null ? error() : this.error,
       loginStatus: loginStatus != null ? loginStatus() : this.loginStatus,
       showPass: showPass != null ? showPass() : this.showPass,
@@ -35,8 +29,6 @@ class LoginState extends Equatable {
 
   @override
   List<Object?> get props => [
-    email,
-    password,
     error,
     loginStatus,
     showPass,

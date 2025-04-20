@@ -110,6 +110,8 @@ class AddClassView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormBuilderState>();
+    final lecturerFieldKey = GlobalKey<FormBuilderFieldState>();
+    final locationFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -327,6 +329,7 @@ class AddClassView extends StatelessWidget {
                         SizedBox(
                           height: 0.06 * screenHeight,
                           child: InputField(
+                            formKey: lecturerFieldKey,
                             name: lecturerString,
                             initialValue: lecturer ?? '',
                             icon: Icon(Icons.person, size: 0.03 * screenHeight,),
@@ -346,6 +349,7 @@ class AddClassView extends StatelessWidget {
                         SizedBox(
                           height: 0.06 * screenHeight,
                           child: InputField(
+                            formKey: locationFieldKey,
                             name: locationString,
                             initialValue: location ?? '',
                             icon: Icon(Icons.location_pin, size: 0.03 * screenHeight,),

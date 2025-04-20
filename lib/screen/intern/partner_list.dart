@@ -36,7 +36,7 @@ class PartnerListPage extends StatelessWidget {
               FormBuilder(
                 key: formKey,
                 child: InputField(
-                  key: searchFieldKey,
+                  formKey: searchFieldKey,
                   name: searchString,
                   icon: Icon(Icons.search, size: 0.03 * screenHeight,),
                   hintText: searchString,

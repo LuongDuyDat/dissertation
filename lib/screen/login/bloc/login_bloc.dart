@@ -6,13 +6,12 @@ import 'package:learning_intern_support_system/screen/login/bloc/login_event.dar
 import 'package:learning_intern_support_system/screen/login/bloc/login_state.dart';
 
 import '../../../service_locator.dart';
+import '../../../util/strings.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() :
         super(const LoginState()) {
     on<LoginError>(_onError);
-    on<LoginEmailChange>(_onEmailChange);
-    on<LoginPasswordChange>(_onPasswordChange);
     on<LoginSubmit>(_onSubmit);
     on<LoginShowPassChange>(_onShowPassChange);
   }
@@ -32,23 +31,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     ));
   }
 
-  void _onEmailChange(
-      LoginEmailChange event,
-      Emitter<LoginState> emit,
-      ) {
-    emit(state.copyWith(
-      email: () => event.email,
-    ));
-  }
-
-  void _onPasswordChange(
-      LoginPasswordChange event,
-      Emitter<LoginState> emit,
-      ) {
-    emit(state.copyWith(
-      password: () => event.password,
-    ));
-  }
 
   void _onSubmit(
       LoginSubmit event,
@@ -57,14 +39,19 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     emit(state.copyWith(
         loginStatus: () => LoginStatus.loading
     ));
-    SignInReqParams signInReqParams = SignInReqParams(email: state.email, password: state.password);
+    SignInReqParams signInReqParams = SignInReqParams(email: event.email, password: event.password);
     try {
       Either result = await sl<SignInUseCase>().call(param: signInReqParams);
-      result.fold(
-              (error) {
+      await result.fold(
+              (error) async{
                 emit(state.copyWith(
                   loginStatus: () => LoginStatus.failure,
-                  error: () => error,
+                  error: () => loginFailedString,
+                ));
+                await Future.delayed(const Duration(seconds: 3));
+                emit(state.copyWith(
+                  error: () => '',
+                  loginStatus: () => LoginStatus.initial,
                 ));
           },
               (data) {
@@ -77,6 +64,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(state.copyWith(
           loginStatus: () => LoginStatus.failure,
           error: () => e.toString(),
+      ));
+      await Future.delayed(const Duration(seconds: 3));
+      emit(state.copyWith(
+        error: () => '',
+        loginStatus: () => LoginStatus.initial,
       ));
     }
 

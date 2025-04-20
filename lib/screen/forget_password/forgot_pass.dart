@@ -5,7 +5,6 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:learning_intern_support_system/screen/forget_password/bloc/forgot_pass_bloc.dart';
 import 'package:learning_intern_support_system/screen/forget_password/bloc/forgot_pass_event.dart';
 import 'package:learning_intern_support_system/screen/forget_password/bloc/forgot_pass_state.dart';
-import 'package:learning_intern_support_system/screen/register/register.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
 import 'package:learning_intern_support_system/util/theme.dart';
@@ -31,6 +30,7 @@ class ForgotPassView extends StatelessWidget {
   ForgotPassView({super.key});
 
   final _formKey = GlobalKey<FormBuilderState>();
+  final emailFieldKey = GlobalKey<FormBuilderFieldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +71,7 @@ class ForgotPassView extends StatelessWidget {
                           Text(enterEmailString, style: Theme.of(context).textTheme.headlineSmall,),
                           SizedBox(height: 0.004 * screenHeight),
                           InputField(
+                            formKey: emailFieldKey,
                             name: emailString,
                             icon: const Icon(Icons.person),
                             initialValue: state.email,
@@ -130,18 +131,6 @@ class ForgotPassView extends StatelessWidget {
                           if (_formKey.currentState!.validate()) {
                             context.read<ForgotPasswordBloc>().add(const ForgotPasswordSubmit());
                           }
-                        },
-                      ),
-                      SizedBox(height: 0.05 * screenHeight),
-                      Text(orString, style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.w700),),
-                      SizedBox(height: 0.05 * screenHeight),
-                      Button(
-                        type: 1,
-                        width: double.infinity,
-                        height: 0.056 * screenHeight,
-                        text: signUpString,
-                        onPressed: () {
-                          Navigate.pushPageReplacement(context, const RegisterPage());
                         },
                       ),
                     ],

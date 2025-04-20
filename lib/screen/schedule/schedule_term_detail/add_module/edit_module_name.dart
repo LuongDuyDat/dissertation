@@ -74,6 +74,7 @@ class EditModuleNameView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormBuilderState>();
+    final moduleFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -112,6 +113,7 @@ class EditModuleNameView extends StatelessWidget {
                 child: SizedBox(
                   height: 0.06 * screenHeight,
                   child: InputField(
+                    formKey: moduleFieldKey,
                     name: moduleNameString,
                     initialValue: initialValue ?? '',
                     icon: Icon(Icons.title, size: 0.03 * screenHeight,),

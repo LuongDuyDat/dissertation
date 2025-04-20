@@ -32,6 +32,7 @@ class ScheduleTermAddView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormBuilderState>();
+    final termFieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -65,6 +66,7 @@ class ScheduleTermAddView extends StatelessWidget {
                 child: SizedBox(
                   height: 0.06 * screenHeight,
                   child: InputField(
+                    formKey: termFieldKey,
                     name: termString,
                     icon: Icon(Icons.title, size: 0.03 * screenHeight,),
                     hintText: termString,

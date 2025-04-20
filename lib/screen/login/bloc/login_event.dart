@@ -19,31 +19,16 @@ class LoginError extends LoginEvent {
     error,
   ];
 }
-
-class LoginEmailChange extends LoginEvent {
-  const LoginEmailChange({
-    required this.email,
-  });
-
-  final String email;
-
-  @override
-  List<Object?> get props => [email];
-}
-
-class LoginPasswordChange extends LoginEvent {
-  const LoginPasswordChange({
-    required this.password,
-  });
-
-  final String password;
-
-  @override
-  List<Object?> get props => [password];
-}
-
 class LoginSubmit extends LoginEvent {
-  const LoginSubmit();
+  final String email;
+  final String password;
+  const LoginSubmit({required this.email, required this.password});
+
+  @override
+  List<Object?> get props => [
+    email,
+    password,
+  ];
 }
 class LoginShowPassChange extends LoginEvent {
   const LoginShowPassChange();

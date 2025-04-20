@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning_intern_support_system/screen/app/bloc/app_bloc.dart';
 import 'package:learning_intern_support_system/screen/app/bloc/app_event.dart';
-import 'package:learning_intern_support_system/screen/profile/change_password.dart';
+import 'package:learning_intern_support_system/screen/profile/change_password/change_password.dart';
 import 'package:learning_intern_support_system/screen/profile/edit_profile.dart';
 import 'package:learning_intern_support_system/screen/profile/my_cv.dart';
 import 'package:learning_intern_support_system/screen/profile/my_profile/bloc/my_profile_bloc.dart';

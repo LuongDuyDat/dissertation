@@ -6,6 +6,7 @@ import 'package:learning_intern_support_system/util/theme.dart';
 import '../util/global.dart';
 
 class InputField extends StatelessWidget {
+  final Key formKey;
   final Icon icon;
   final String hintText;
   final bool obscure;
@@ -22,7 +23,7 @@ class InputField extends StatelessWidget {
   final String initialValue;
 
   const InputField({
-    //required Key key,
+    required this.formKey,
     Key? key,
     required this.name,
     required this.icon,
@@ -43,7 +44,7 @@ class InputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FormBuilderTextField(
-      //key: key,
+      key: formKey,
       name: name,
       initialValue: initialValue,
       decoration: InputDecoration(
@@ -73,8 +74,10 @@ class InputField extends StatelessWidget {
 }
 
 class EditInputField extends StatelessWidget {
+  final Key formKey;
   final bool obscure;
   final Icon? suffixIcon;
+  final Function()? onSuffixIconTap;
   final TextInputFormatter? textInputFormatter;
   final String? type;
   final TextStyle style;
@@ -85,10 +88,12 @@ class EditInputField extends StatelessWidget {
   final String? Function(String?)? validator;
 
   const EditInputField({
-    required Key key,
+    Key? key,
+    required this.formKey,
     required this.name,
     required this.obscure,
     this.suffixIcon,
+    this.onSuffixIconTap,
     this.textInputFormatter,
     this.type,
     this.onChange,
@@ -101,14 +106,17 @@ class EditInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FormBuilderTextField(
-      //key: key,
+      key: formKey,
       name: name,
       initialValue: initialText,
       decoration: InputDecoration(
         suffixIcon: suffixIcon != null
             ? Padding(
           padding: EdgeInsets.only(left: screenWidth * 0.02, right: 0, top: 0.01 * screenHeight,),
-          child: suffixIcon,
+          child: InkWell(
+            onTap: onSuffixIconTap,
+            child: suffixIcon,
+          ),
         ) : const SizedBox(width: 0, height: 0),
         border: const UnderlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(0))),
         isDense: true,

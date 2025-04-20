@@ -1,4 +1,8 @@
 import 'package:get_it/get_it.dart';
+import 'package:learning_intern_support_system/data/repository/profile.dart';
+import 'package:learning_intern_support_system/data/source/profile_api_service.dart';
+import 'package:learning_intern_support_system/domain/repository/profile.dart';
+import 'package:learning_intern_support_system/domain/usercase/change_pass.dart';
 
 import 'data/repository/auth.dart';
 import 'data/source/auth_api_service.dart';
@@ -23,10 +27,16 @@ void setupServiceLocator() {
   sl.registerSingleton<AuthLocalService>(
       AuthLocalServiceImpl()
   );
+  sl.registerSingleton<ProfileApiService>(
+    ProfileApiServiceImpl()
+  );
 
   // Repositories
   sl.registerSingleton<AuthRepository>(
       AuthRepositoryImpl()
+  );
+  sl.registerSingleton<ProfileRepository>(
+    ProfileRepositoryImpl()
   );
 
   // Usecases
@@ -44,6 +54,10 @@ void setupServiceLocator() {
 
   sl.registerSingleton<LogoutUseCase>(
       LogoutUseCase()
+  );
+
+  sl.registerSingleton<ChangePassUseCase>(
+    ChangePassUseCase()
   );
 
 }
