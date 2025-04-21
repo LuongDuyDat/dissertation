@@ -190,6 +190,7 @@ String weekDaysString = lang == 'vi' ? 'Thứ' : 'Weekdays';
 String checkInputFieldString = lang == 'vi' ? 'Mật khẩu mới không trùng với mật khẩu nhập lại' : 'New password is not equal with Retype Password';
 String oldPassNotCorrectString  = lang == 'vi' ? 'Mật khẩu cũ không đúng' : "Old Pasword is not correct";
 String loginFailedString  = lang == 'vi' ? 'Tài khoản hoặc mật khẩu không đúng' : "Login Failed due to incorrect email or password";
+String getNotificationFailString = lang == 'vi' ? 'Không thể lấy được danh sách thông báo' : "Cannot get Notification List";
 
 List<String> classDropDownString = ['K64C-CLC', 'K64C-B'];
 List<String> facultyDropDownString = ['Công nghệ thông tin', 'Điện tử viễn thông'];

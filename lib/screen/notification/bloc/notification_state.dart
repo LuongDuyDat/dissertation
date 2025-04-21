@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:learning_intern_support_system/domain/entities/notification_model.dart';
+import 'package:learning_intern_support_system/domain/entities/notification.dart';
 
 enum NotificationStatus {initial, loading, success, failure}
 
@@ -12,14 +12,14 @@ class NotificationState extends Equatable {
   });
 
   final NotificationStatus notificationStatus;
-  final List<NotificationModel> newNotifications;
-  final List<NotificationModel> oldNotifications;
+  final List<NotificationEntity> newNotifications;
+  final List<NotificationEntity> oldNotifications;
   final String error;
 
   NotificationState copyWith({
     NotificationStatus Function()? notificationStatus,
-    List<NotificationModel> Function()? newNotifications,
-    List<NotificationModel> Function()? oldNotifications,
+    List<NotificationEntity> Function()? newNotifications,
+    List<NotificationEntity> Function()? oldNotifications,
     String Function()? error,
   }) {
     return NotificationState(

@@ -82,12 +82,13 @@ class NotificationView extends StatelessWidget {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
+                        String title = state.newNotifications.elementAt(index).title;
                         return NotificationWidget(
-                          type: state.newNotifications.elementAt(index).type,
+                          type: title == scheduleString ? 2 : (title == notificationString ? 3 : 1),
                           isRead: state.newNotifications.elementAt(index).isRead,
-                          title: state.newNotifications.elementAt(index).title,
-                          dateTime: state.newNotifications.elementAt(index).dateTime,
-                          company: state.newNotifications.elementAt(index).company,
+                          title: state.newNotifications.elementAt(index).content,
+                          dateTime: state.newNotifications.elementAt(index).metaData,
+                          company: state.newNotifications.elementAt(index).title,
                         );
                       },
                       itemCount: state.newNotifications.length,
@@ -109,12 +110,13 @@ class NotificationView extends StatelessWidget {
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
+                        String title = state.oldNotifications.elementAt(index).title;
                         return NotificationWidget(
-                          type: state.oldNotifications.elementAt(index).type,
+                          type: title == scheduleString ? 2 : (title == notificationString ? 3 : 1),
                           isRead: state.oldNotifications.elementAt(index).isRead,
-                          title: state.oldNotifications.elementAt(index).title,
-                          dateTime: state.oldNotifications.elementAt(index).dateTime,
-                          company: state.oldNotifications.elementAt(index).company,
+                          title: state.oldNotifications.elementAt(index).content,
+                          dateTime: state.oldNotifications.elementAt(index).metaData,
+                          company: state.oldNotifications.elementAt(index).title,
                         );
                       },
                       itemCount: state.oldNotifications.length,
@@ -148,7 +150,7 @@ class NotificationWidget extends StatelessWidget {
   final bool isRead;
   final String title;
   final String? company;
-  final DateTime dateTime;
+  final String dateTime;
 
   @override
   Widget build(BuildContext context) {

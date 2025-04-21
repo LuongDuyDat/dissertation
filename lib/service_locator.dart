@@ -1,8 +1,14 @@
 import 'package:get_it/get_it.dart';
+import 'package:learning_intern_support_system/data/repository/notification.dart';
 import 'package:learning_intern_support_system/data/repository/profile.dart';
+import 'package:learning_intern_support_system/data/source/notification_api_service.dart';
 import 'package:learning_intern_support_system/data/source/profile_api_service.dart';
+import 'package:learning_intern_support_system/domain/repository/notification.dart';
 import 'package:learning_intern_support_system/domain/repository/profile.dart';
 import 'package:learning_intern_support_system/domain/usercase/change_pass.dart';
+import 'package:learning_intern_support_system/domain/usercase/get_all_notification.dart';
+import 'package:learning_intern_support_system/domain/usercase/mark_all_notifications.dart';
+import 'package:learning_intern_support_system/domain/usercase/mark_notification_by_id.dart';
 
 import 'data/repository/auth.dart';
 import 'data/source/auth_api_service.dart';
@@ -31,12 +37,20 @@ void setupServiceLocator() {
     ProfileApiServiceImpl()
   );
 
+  sl.registerSingleton<NotificationApiService>(
+    NotificationServiceImpl()
+  );
+
   // Repositories
   sl.registerSingleton<AuthRepository>(
       AuthRepositoryImpl()
   );
   sl.registerSingleton<ProfileRepository>(
     ProfileRepositoryImpl()
+  );
+
+  sl.registerSingleton<NotificationRepository>(
+    NotificationRepositoryImpl()
   );
 
   // Usecases
@@ -58,6 +72,18 @@ void setupServiceLocator() {
 
   sl.registerSingleton<ChangePassUseCase>(
     ChangePassUseCase()
+  );
+
+  sl.registerSingleton<NotificationGetAllUseCase>(
+      NotificationGetAllUseCase()
+  );
+
+  sl.registerSingleton<NotificationMarkAllUseCase>(
+      NotificationMarkAllUseCase()
+  );
+
+  sl.registerSingleton<NotificationMarkByIdUseCase>(
+      NotificationMarkByIdUseCase()
   );
 
 }
