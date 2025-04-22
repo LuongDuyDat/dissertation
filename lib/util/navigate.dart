@@ -14,12 +14,12 @@ class Navigate{
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => page));
   }
 
-  static void popPage(BuildContext context) {
-    Navigator.pop(context);
+  static void popPage(BuildContext context, [Object? result]) {
+    Navigator.pop(context, result);
   }
 
-  static void pushNewScreen(BuildContext context, Widget page, bool? withNavbar) {
-    PersistentNavBarNavigator.pushNewScreen(
+  static Future<dynamic> pushNewScreen(BuildContext context, Widget page, bool? withNavbar) {
+    return PersistentNavBarNavigator.pushNewScreen(
       context,
       screen: page,
       withNavBar: withNavbar ?? true,

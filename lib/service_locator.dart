@@ -9,6 +9,7 @@ import 'package:learning_intern_support_system/domain/usercase/change_pass.dart'
 import 'package:learning_intern_support_system/domain/usercase/get_all_notification.dart';
 import 'package:learning_intern_support_system/domain/usercase/mark_all_notifications.dart';
 import 'package:learning_intern_support_system/domain/usercase/mark_notification_by_id.dart';
+import 'package:learning_intern_support_system/domain/usercase/update_profile.dart';
 
 import 'data/repository/auth.dart';
 import 'data/source/auth_api_service.dart';
@@ -72,6 +73,10 @@ void setupServiceLocator() {
 
   sl.registerSingleton<ChangePassUseCase>(
     ChangePassUseCase()
+  );
+
+  sl.registerSingleton<UpdateProfileUseCase>(
+      UpdateProfileUseCase()
   );
 
   sl.registerSingleton<NotificationGetAllUseCase>(

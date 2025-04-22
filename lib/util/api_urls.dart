@@ -7,4 +7,5 @@ class ApiUrls {
   static const getAllNotification = '${baseURL}api/notifications';
   static const markAllNotification = '${baseURL}api/notifications';
   static const markNotificationById = '${baseURL}api/notifications/';
+  static const updateProfile = '${baseURL}api/users/students/';
 }

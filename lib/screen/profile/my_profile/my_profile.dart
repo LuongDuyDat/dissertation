@@ -3,12 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learning_intern_support_system/screen/app/bloc/app_bloc.dart';
 import 'package:learning_intern_support_system/screen/app/bloc/app_event.dart';
 import 'package:learning_intern_support_system/screen/profile/change_password/change_password.dart';
-import 'package:learning_intern_support_system/screen/profile/edit_profile.dart';
+import 'package:learning_intern_support_system/screen/profile/edit_profile/edit_profile.dart';
 import 'package:learning_intern_support_system/screen/profile/my_cv.dart';
 import 'package:learning_intern_support_system/screen/profile/my_profile/bloc/my_profile_bloc.dart';
 import 'package:learning_intern_support_system/screen/profile/my_profile/bloc/my_profile_event.dart';
 import 'package:learning_intern_support_system/screen/profile/my_profile/bloc/my_profile_state.dart';
 import 'package:learning_intern_support_system/screen/setting.dart';
+import 'package:learning_intern_support_system/util/api_urls.dart';
 import 'package:learning_intern_support_system/util/global.dart';
 import 'package:learning_intern_support_system/util/navigate.dart';
 import 'package:learning_intern_support_system/util/strings.dart';
@@ -44,9 +45,14 @@ class MyProfileView extends StatelessWidget {
               return previous.myProfile != current.myProfile;
             },
             builder: (context, state) {
+              BuildContext currentContext = context;
               return IconButton(
-                onPressed: () {
-                  Navigate.pushNewScreen(context, EditProfilePage(studentEntity: state.myProfile,), true);
+                onPressed: () async{
+                  final result = await Navigate.pushNewScreen(context, EditProfilePage(studentEntity: state.myProfile,), true);
+
+                  if (result == true) {
+                    currentContext.read<MyProfileBloc>().add(const MyProfileInit());
+                  }
                 },
                 icon: const Icon(Icons.edit),
               );
@@ -82,6 +88,9 @@ class MyProfileView extends StatelessWidget {
                               CircleAvatar(
                                 backgroundColor: Colors.black54,
                                 radius: 0.0648 * screenHeight,
+                                backgroundImage:state.myProfile!.avatarPath != ''
+                                    ? NetworkImage(ApiUrls.baseURL + state.myProfile!.avatarPath.replaceFirst("public/", ""))
+                                    : null,
                               ),
                               Positioned(
                                 top: 0.081 * screenHeight,

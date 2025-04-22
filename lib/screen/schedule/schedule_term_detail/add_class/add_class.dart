@@ -110,8 +110,11 @@ class AddClassView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormBuilderState>();
+    final categoryFieldKey = GlobalKey<FormBuilderFieldState>();
     final lecturerFieldKey = GlobalKey<FormBuilderFieldState>();
     final locationFieldKey = GlobalKey<FormBuilderFieldState>();
+    final repeatFieldKey = GlobalKey<FormBuilderFieldState>();
+    final repeat2FieldKey = GlobalKey<FormBuilderFieldState>();
     return Scaffold(
       backgroundColor: backgroundLightColor2,
       appBar: AppBar(
@@ -166,6 +169,7 @@ class AddClassView extends StatelessWidget {
                     SizedBox(
                       height: 0.06 * screenHeight,
                       child: DropDownField(
+                        formKey: categoryFieldKey,
                         name: categoryString,
                         initialValue: category ?? '',
                         icon: Icon(Icons.class_, size: 0.03 * screenHeight,),
@@ -244,6 +248,7 @@ class AddClassView extends StatelessWidget {
                               height: 0.06 * screenHeight,
                               width: 0.42 * screenWidth,
                               child: DropDownField(
+                                formKey: repeatFieldKey,
                                 name: repeatString,
                                 initialValue: numberRepeat != null ? numberRepeat.toString() : '',
                                 icon: Icon(Icons.timer, size: 0.03 * screenHeight,),
@@ -270,6 +275,7 @@ class AddClassView extends StatelessWidget {
                               height: 0.06 * screenHeight,
                               width: 0.418 * screenWidth,
                               child: DropDownField(
+                                formKey: repeat2FieldKey,
                                 name: '${repeatString}2',
                                 initialValue: unitRepeat ?? '',
                                 icon: Icon(Icons.timer, size: 0.03 * screenHeight,),

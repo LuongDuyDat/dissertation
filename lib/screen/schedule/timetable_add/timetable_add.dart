@@ -33,6 +33,7 @@ class TimetableAddView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormBuilderState>();
+    final categoryFieldKey = GlobalKey<FormBuilderFieldState>();
     final moduleFieldKey = GlobalKey<FormBuilderFieldState>();
     final lecturerFieldKey = GlobalKey<FormBuilderFieldState>();
     final locationFieldKey = GlobalKey<FormBuilderFieldState>();
@@ -72,6 +73,7 @@ class TimetableAddView extends StatelessWidget {
                   SizedBox(
                     height: 0.06 * screenHeight,
                     child: DropDownField(
+                      formKey: categoryFieldKey,
                       name: categoryString,
                       icon: Icon(Icons.school, size: 0.03 * screenHeight,),
                       dropdownString: categoryDropDownString,

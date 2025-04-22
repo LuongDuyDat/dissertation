@@ -40,8 +40,8 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future < Either > signIn(SignInReqParams signinReq) async {
-    Either result = await sl < AuthApiService > ().signIn(signinReq);
+  Future < Either > signIn(SignInReqParams signInReq) async {
+    Either result = await sl < AuthApiService > ().signIn(signInReq);
     return result.fold(
             (error) {
           return Left(error);
@@ -50,6 +50,7 @@ class AuthRepositoryImpl extends AuthRepository {
           Response response = data;
           SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
           sharedPreferences.setString('token', response.data['accessToken']);
+          sharedPreferences.setInt('id', response.data['user']["id"]);
           return Right(response);
         }
     );

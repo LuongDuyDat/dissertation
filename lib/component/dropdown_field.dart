@@ -6,6 +6,7 @@ import '../util/global.dart';
 class DropDownField extends StatelessWidget {
   const DropDownField({
     Key? key,
+    required this.formKey,
     required this.dropdownString,
     required this.hintText,
     this.icon,
@@ -19,6 +20,7 @@ class DropDownField extends StatelessWidget {
     this.initialValue = '',
   }) : super(key: key);
 
+  final Key formKey;
   final List<String> dropdownString;
   final String hintText;
   final Icon? icon;
@@ -34,7 +36,7 @@ class DropDownField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FormBuilderDropdown<String>(
-      //key: key,
+      key: formKey,
       name: name,
       initialValue: initialValue,
       decoration: InputDecoration(

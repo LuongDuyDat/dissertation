@@ -86,6 +86,7 @@ class EditInputField extends StatelessWidget {
   final String? hintText;
   final String name;
   final String? Function(String?)? validator;
+  final bool? readOnly;
 
   const EditInputField({
     Key? key,
@@ -101,6 +102,7 @@ class EditInputField extends StatelessWidget {
     this.hintText,
     required this.style,
     this.validator,
+    this.readOnly,
   }) : super(key: key);
 
   @override
@@ -108,6 +110,7 @@ class EditInputField extends StatelessWidget {
     return FormBuilderTextField(
       key: formKey,
       name: name,
+      readOnly: readOnly ?? false,
       initialValue: initialText,
       decoration: InputDecoration(
         suffixIcon: suffixIcon != null
